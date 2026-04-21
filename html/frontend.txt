@@ -1,0 +1,91 @@
+front end :
+ - what are the user can seen on the screen is called as front end
+ - to design frontend we have different technologies like { html, css, js, react.js etc....}
+
+backend:
+ - backend is the server side programming haveing api logics, database logics to monitor and manage the data that will be 
+   come from frontend( req, res)
+ - here also have some technlogies (programming langages) like node js , express js ,java ,python etc
+
+database ;
+ - database is the blace where we can store the data
+ - to store the data or we commmunicate databse need some technologies like mysql, sql, mangoDB , neo4j , postgres sql
+   HBase, raik etc
+
+web applications: 
+ - any applications that will be run in broweser is called as a web applications
+ - types
+   - static web applications
+   - dynamic web applications
+
+static web applications:
+ - any web applications doesn't have functionalities is called a static web applications
+ - we need html, css
+
+dynamic web applications:
+ - any web applications haveing functionalities is called a dynamic web applications
+ - we need html, css and js
+
+web page:
+ - html documents is called a web page
+
+web site:
+ - collection of html documents is called as a website
+
+web server: 
+ - collection of websites called as a web server
+
+browser working principle:
+ - user -> browser -> url -> DNS
+                       ->request
+                       ipadress
+
+HTML: 
+ - html are used to build structure of the web page
+ - html is stands for " hyper text markup language"
+ - indroduced in the yesr 1991 by the developer " tim bernerslie"
+ - current version html5
+ - this is the standard markup language
+
+html boiler plate:
+ - <!DOCTYPE html> -> version of html document 
+ - <html lang="en"> -> root element
+ - <head> -> head tag contains broweser and file information
+    <meta charset="UTF-8"> -> meta information
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  -> broweser tab data
+    </head>
+ - <body> -> structureof web page 
+   </body>
+   </html>
+
+html tags:
+ - tags are the predefine words which are incloses with both opening and closing angular brackets
+ - eg: <h1>, <div>, <head>, <body> etc.....
+
+types of tags:
+ - paired tags
+   -any tags are haveing both opening and closing tags are called as paired tags
+    eg: <html></html>, <body></body>
+    1. headingb tags 
+     - we have 6 tags
+     eg: h1,h2,h3,....h6
+    2. formatting tags
+     - it's have their own css behaviors
+     eg: <b></b> - bold
+        <strong></strong> - bold
+        <i></i> - italic
+        <em></em> - italic
+        <u></u> - under line
+        <mark></mark> - ot hihlight contant
+        <sub></sub>
+        <sup></sup>
+        <center></center>
+        <marquee></marquee> - to scroll the contant
+        <strike></strike>
+        <pre></pre>etc.....
+    3. other tags
+ - unpaired tags :
+   - 
+ 
+ 

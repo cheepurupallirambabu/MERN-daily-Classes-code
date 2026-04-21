@@ -1,0 +1,21 @@
+day -1 
+
+three tier architecture
+
+front end: html, css, js, react.js, anjular.js 
+html
+
+day-2
+
+install git 
+config the GitHub
+ - create a GitHub repository
+ - config GitHub credintuals to git by entering the commends
+   - git config --global user.name ""
+   - git config --global user.email ""
+ - git config list
+ - git init
+ - commend to add the file or folders ( git add .)
+
+
+
