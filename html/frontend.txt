@@ -154,3 +154,43 @@ tables in html:
     - bgcolor
 
 
+forms in html:
+ - forms are used to collect user information digitally
+ - tags in form
+   - <form></form>
+   - <fieldset></fieldset> -> to design border fieldset
+   - <legend></legend> -> lable the form
+   - <lable></lable> -> lable the inputfield
+   - <input>   -> to collect input from users
+   - <button></button> -> to display the button in the form
+   - <textarea></textarea> -> to collect large data text
+   - <select></select> -> to group the options 
+
+   - attributes:
+     1. action 
+     2. method
+   - fieldset:
+     1. style
+     2. indroduced
+     3. class
+   - legand:
+      1. align 
+      2. style
+      3. class
+      4. id
+
+   - lable:
+      1.for -> link input   
+      2. style
+      3. class
+      4. id
+
+  - input:
+     1. types 2. id 3. name 4. placeholder 5. min 6. max
+     7. pattern 8. min length 13. maxlength 9. required 10. readonly 11. style 12. class
+
+  - button:
+    1. id 2. type 3. class4. style
+
+  - textarea:
+    1. 
