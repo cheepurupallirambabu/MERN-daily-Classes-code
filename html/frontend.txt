@@ -85,7 +85,72 @@ types of tags:
         <strike></strike>
         <pre></pre>etc.....
     3. other tags
+      - eg: <div></div>, <p></p>, <span></span> , <li></li> , <table></table>
  - unpaired tags :
-   - 
- 
- 
+   - any tags are haveing only opening tag are called as paired tags
+   eg: <br> , <input> , <hr> , <col> ,<meta>
+
+
+ attributes in html: 
+  - which are used to give the additional information to the html tags 
+  - attributes are always in opening tags
+  - attributes are always key and paired 
+
+  eg: <h1 align="center">hello</h1>
+
+  elements in html:
+   - opening tag , closing tag and content together is called as a elements 
+    - inline elements
+    - block level elements
+
+image tag:
+ < img src="">
+
+marquee tag:
+ - behavior=" scroll"
+ - directions = "down, left, right "
+ - scrollamount =" " 
+
+list in html:
+ - ordered list
+   - it is used to display the items in a ordered way
+   - <ol></ol>
+   - <li> </li> to represent the list items 
+   attributes:
+    - types --> 1,a,A,i,I  etc...
+    - start
+    - reverse
+ - unordered list:
+   - it is used to display the items with symboles
+   - <ul></ul>
+   - <li></li>
+   - attributes:
+    - types: none , circle, desc, square , 
+ - description or definition list:
+   - used to describe the items
+   - <dl></dl> --> definition list
+   - <dt></dt>
+   - <dd></dd> --> definition data
+ - nested list: 
+   - a list having one or more another lists is called nested 
+   
+tables in html:
+ - the collection of rows and columns is called as a table
+ - tags in table:
+    - <table></table>
+    - <th></th> table head
+    - <tr></tr>table row
+    - <td></td> table data
+    - <thead></thead>
+    - <tbody></tbody>
+    - <tboot></tboot>
+    - <colgroup></colgroup> column group
+    - <col>
+  - attributes:
+    - border
+    - cellspacing
+    - cellpadding
+    - align
+    - bgcolor
+
+

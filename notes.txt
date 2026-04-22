@@ -7,15 +7,21 @@ html
 
 day-2
 
-install git 
-config the GitHub
+install git  
+git --version  --> to check the version of the git 
+create  the GitHub account
  - create a GitHub repository
+ - open the project folder in terminal
+ - enter (cls)
  - config GitHub credintuals to git by entering the commends
    - git config --global user.name ""
    - git config --global user.email ""
  - git config list
  - git init
  - commend to add the file or folders ( git add .)
+ - git commit -m "message "
+    eg: git commit -m "day-1 code"
 
-
-
+ - git branch -M main
+ - git remote add origin https://github.com/cheepurupallirambabu/MERN-daily-Classes-code.git
+ - git push -u origin main
