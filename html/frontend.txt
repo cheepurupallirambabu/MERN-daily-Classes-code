@@ -193,4 +193,24 @@ forms in html:
     1. id 2. type 3. class4. style
 
   - textarea:
-    1. 
+    1. id 2. class
+
+media tags:
+ -  which are used to display audio video or to embed google maps , youtube videos , socument , webpages etc
+
+ - tags :
+    1. audio
+       - <audio></audio> - > of displaying audio
+       - src , controls, muted, loop, autoplay
+    2. video
+       - src , controls , muted , loop , autoplay, height , width
+    3. iframe:
+      - src, frameborder , height , width
+
+
+anchor tag:
+ - <a> </a> used to link the exteranal webpages , website , documents, etc
+ - attributes:
+    - href   -> path
+    - target  -> _blank, _self , _top , _parent 
+    - download 

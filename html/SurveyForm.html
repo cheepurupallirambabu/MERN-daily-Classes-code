@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <h2>Survey Form</h2>
+    <form action="" method="">
+        <fieldset>
+            <legend>Survey Details</legend>
+            <label for="userName">User Name:</label><br>
+            <input type="text" id="userName" name="userName" required><br><br>
+
+            <label for="feedback">Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+
+            <label>Rating (1-5):</label><br>
+            <input type="radio" id="rating1" name="rating" value="1" required> <label for="rating1">1</label>
+            <input type="radio" id="rating2" name="rating" value="2"> <label for="rating2">2</label>
+            <input type="radio" id="rating3" name="rating" value="3"> <label for="rating3">3</label>
+            <input type="radio" id="rating4" name="rating" value="4"> <label for="rating4">4</label>
+            <input type="radio" id="rating5" name="rating" value="5"> <label for="rating5">5</label><br><br>
+
+            <label for="favoriteTech">Favorite Technology:</label><br>
+            <select id="favoriteTech" name="favoriteTech" required>
+                <option value="">--Select--</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="react">React.js</option>
+                <option value="nodejs">Node.js</option>
+            </select><br><br>
+
+            <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+            <label for="subscribe">Subscribe option</label><br><br>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

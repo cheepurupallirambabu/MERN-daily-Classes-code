@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Form</title>
+</head>
+<body>
+    <h2>Service Request Form</h2>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Request Details</legend>
+            <label for="customerName">Customer Name:</label><br>
+            <input type="text" id="customerName" name="customerName" required><br><br>
+
+            <label for="contactNumber">Contact Number:</label><br>
+            <input type="tel" id="contactNumber" name="contactNumber" required><br><br>
+
+            <label for="issueType">Issue Type:</label><br>
+            <select id="issueType" name="issueType" required>
+                <option value="">--Select Issue--</option>
+                <option value="laptop_repair">Laptop Repair</option>
+                <option value="internet_issue">Internet Issue</option>
+                <option value="software_installation">Software Installation</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <label>Priority:</label><br>
+            <input type="radio" id="priorityLow" name="priority" value="low" required> <label for="priorityLow">Low</label>
+            <input type="radio" id="priorityMedium" name="priority" value="medium"> <label for="priorityMedium">Medium</label>
+            <input type="radio" id="priorityHigh" name="priority" value="high"> <label for="priorityHigh">High</label><br><br>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

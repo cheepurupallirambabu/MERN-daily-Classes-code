@@ -4,57 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jobappliction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(./wallpaper.jpg);
+            background-size: cover;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+            height: fit-content;
+        }
+        form {
+            backdrop-filter: blur(50px);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            row-gap: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .form-control {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: whitesmoke;
+        }
+        .form-control > label {
+            width: 150px;
+            text-align: right;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        input[type="text"], input[type="email"], input[type="date"],
+        input[type="number"], input[type="tel"], textarea, input[type="file"], .input-group {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            margin-top: 15px;
+        }
+        input[type="submit"] { background-color: #4CAF50; }
+        input[type="submit"]:hover { background-color: #45a049; }
+        input[type="reset"] { background-color: #f44336; margin-left: 10px; }
+        input[type="reset"]:hover { background-color: #da190b; }
+        .input-group {
+            flex-grow: 1;
+            border: none;
+            padding: 0;
+        }
+        .input-group label {
+            font-weight: normal;
+        }
+    </style>
 </head>
 <body>
     
     <form action="" method="" >
         <fieldset>
           <h1 align="center">Job Registration</h1>
-        <label for="name">First Name:</label>
-        <input type="text" id="name" name="name" required minlength="3" maxlength="8" placeholder="First Name"><br><br>
-        
-        <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" required minlength="3" maxlength="8" placeholder="Last Name"><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="enter email"><br><br>
-
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required><br><br>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required placeholder="Enter age"><br><br>
-
-        <lable for="gender">Gender:</lable>
-        <input type="radio" name="gender" id="male" required><label for="male" >Male</label>
-        <input type="radio" name="gender" id="female" required><label for="female" >Female</label><br><br>
-
-        <lable for="tel">Phone:</lable>
-        <input type="tel" name="tel" id="tel" placeholder="enter phone"><br><br>
-
-        <lable for="address">Address:</lable><br>
-        <textarea name="address" id=""></textarea><br><br>
-
-        <label for="skills">Skills</label>
-        <input type="checkbox" name="skills" id="nodejs" value="Nodejs"><label for="nodejs">Nodejs</label>
-        <input type="checkbox" name="skills" id="reactjs" value="Reactjs"><label for="reactjs">Reactjs</label>
-        <input type="checkbox" name="skills" id="git" value="Git"><label for="git">Git</label>
-        <input type="checkbox" name="skills" id="mangodb" value="MangoDB"><label for="mangodb">MangoDB</label>
-        <input type="checkbox" name="skills" id="angularjs" value="AngularJs"><label for="angularjs">AngularJs</label>
-
-        <br><br>
-        <label>Languages: </label><br>
-        <label for="english">English:</label>
-        <input type="range" class="lang-range" id="english" name="english" min="0" max="100" value="0">
-        <label for="kannada">Kannada:</label>
-        <input type="range" class="lang-range" id="kannada" name="kannada" min="0" max="100" value="0">
-        <label for="telugu">Telugu:</label>
-        <input type="range" class="lang-range" id="telugu" name="telugu" min="0" max="100" value="0"><br><br>
-
-        <label for="resume">Upload Resume:</label>
-        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
-         <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+            <div class="form-control">
+                <label for="name">First Name:</label>
+                <input type="text" id="name" name="name" required minlength="3" maxlength="8" placeholder="First Name">
+            </div>
+            <div class="form-control">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required minlength="3" maxlength="8" placeholder="Last Name">
+            </div>
+            <div class="form-control">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="enter email">
+            </div>
+            <div class="form-control">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-control">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required placeholder="Enter age">
+            </div>
+            <div class="form-control">
+                <label for="gender">Gender:</label>
+                <div class="input-group">
+                    <input type="radio" name="gender" id="male" required><label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" required><label for="female">Female</label>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="tel">Phone:</label>
+                <input type="tel" name="tel" id="tel" placeholder="enter phone">
+            </div>
+            <div class="form-control" style="align-items: start;">
+                <label for="address" style="padding-top: 8px;">Address:</label>
+                <textarea name="address" id=""></textarea>
+            </div>
+            <div class="form-control">
+                <label for="skills">Skills</label>
+                <div class="input-group">
+                    <input type="checkbox" name="skills" id="nodejs" value="Nodejs"><label for="nodejs">Nodejs</label>
+                    <input type="checkbox" name="skills" id="reactjs" value="Reactjs"><label for="reactjs">Reactjs</label>
+                    <input type="checkbox" name="skills" id="git" value="Git"><label for="git">Git</label>
+                    <input type="checkbox" name="skills" id="mangodb" value="MangoDB"><label for="mangodb">MangoDB</label>
+                    <input type="checkbox" name="skills" id="angularjs" value="AngularJs"><label for="angularjs">AngularJs</label>
+                </div>
+            </div>
+            <div class="form-control" style="align-items: start;">
+                <label style="padding-top: 8px;">Languages: </label>
+                <div class="input-group">
+                    <label for="english">English:</label>
+                    <input type="range" class="lang-range" id="english" name="english" min="0" max="100" value="0"><br>
+                    <label for="kannada">Kannada:</label>
+                    <input type="range" class="lang-range" id="kannada" name="kannada" min="0" max="100" value="0"><br>
+                    <label for="telugu">Telugu:</label>
+                    <input type="range" class="lang-range" id="telugu" name="telugu" min="0" max="100" value="0">
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
         </fieldset>
 
        
