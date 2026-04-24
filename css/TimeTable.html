@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table</title>
+    <style>
+        ol+h1 {
+            color: rgb(207, 54, 16);
+            font-size: 50px;
+        }
+        h1+ol {
+            background-color: blue;
+            color: aliceblue;
+        }
+        ul p {
+            color: rgba(248, 246, 244, 0.992);
+            background-color: rgb(27, 249, 15);
+        }
+
+        ul>li {
+            background-color: gold;
+            margin: 20px;
+        }
+        ol~h1{
+
+            background-color: aquamarine;
+        }
+        body>h1:first-child{
+            background-color: #c40d0d;
+        }
+        h1+p{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        order list
+    </h1>
+    <ol>
+        <li>iteam-1</li>
+        <li>iteam-2</li>
+        <li>iteam-3</li>
+        <li>iteam-4</li>
+    </ol>
+    <h1>
+        unorder list
+    </h1>
+    <ul>
+        <li><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p></li>
+        <li>iteam-2</li>
+        <li>iteam-3</li>
+        <li>iteam-4</li>
+    </ul>
+    <h1>
+        paragraph:
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Adipisci modi sapiente sint sit. Fugiat, recusandae pariatur, eligendi, 
+        nisi assumenda nemo libero exercitationem numquam tempora quae eos inventore 
+        perferendis voluptatibus est.
+    </p>
+</body>
+</html>

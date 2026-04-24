@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        h1:hover {
+            color: red;
+            text-shadow: 5px 5px 10px black;
+        }
+        li:first-child {
+            background-color: gold;
+        }
+          li:last-child {
+            background-color: rgb(231, 222, 169);
+        }
+        div>button:first-of-type {
+            background-color: lightblue;
+        }
+        div>button:last-of-type {
+            background-color: gold;
+            box-shadow: 5px 5px 10px black;
+
+        }
+        ol>li:nth-child(odd){
+            background-color: rgb(22, 189, 245);
+        }
+        ol>li:nth-child(even){
+            background-color: rgb(22, 245, 52);
+        }
+        a:visited{
+            background-color: blue;
+            color: rgb(208, 14, 14);
+            text-decoration: none;
+        }
+        input[type="search"]:focus{
+            background-color: lightblue;
+            font-style: italic;
+            font-weight: bold;
+        }
+        a:active{
+            background-color: red;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <h1>order list</h1>
+        <li>list-item-1</li>
+        <li>list-item-2</li>
+        <li>list-item-3</li>
+        <li>list-item-4</li>
+        <li>list-item-5</li>
+
+    </ol>
+    <div>
+        <h1>Buttons</h1>
+        <button>button-1</button>
+        <button>button-2</button>
+        <button>button-3</button>
+        <button>button-4</button>
+        <button>button-5</button>
+    </div><br><br>
+    <input type="search">
+
+    <h1><a href="https://www.flipkart.com/?affid=affsiteplug&affExtParam1=60827&affExtParam2=5efa57933d18a604fb60e6b00c766db4">Link</a></h1>
+</body>
+</html>

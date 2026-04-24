@@ -23,6 +23,25 @@ css selectors:
    1. simple selectors:
       - id(#),class(.), tag, grouping(,), universal(*) selector
    2. combinator selectors
+     - descendent selector (space)
+     - child selector (>)
+     - adjacent sibling selector(+)
+     - general sibling selector(~)
    3. pseudo class selectors
+     - structural pseudo class selectors
+       - :first-child
+       - :last-child
+       - :first-of-type
+       - :last-of-type
+       - :nth-child(n)
+     - dynamic pseudo class selectors
+         - :hover
+         - :active
+         - :visited  -> link tag
+         - :focus  -> input tag
+
    4. pseudo element selectors
    5. attribute selectors
+
+
+   
