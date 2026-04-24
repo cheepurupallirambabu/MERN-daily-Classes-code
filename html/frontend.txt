@@ -214,3 +214,19 @@ anchor tag:
     - href   -> path
     - target  -> _blank, _self , _top , _parent 
     - download 
+
+semantic tags:
+ - used to build the proper structure of the web pages 
+ - tags:
+   - <header></header>
+   - <footer></footer>
+   - <main></main>
+   - <section></section>
+   - <article></article>
+   - <aside></aside>
+   - <nav></nav>
+   - <em></em>
+   - <strong></strong>
+   - <figure></figure>
+
+

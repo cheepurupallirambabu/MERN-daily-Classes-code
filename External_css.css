@@ -1,0 +1,13 @@
+@import url("./External_css2.css");
+form {
+    padding: 10px;
+    background-color: #0d0d0d;
+    color: aqua;
+}
+fieldset {
+    border: 1px solid #b9e2f3;
+    border-radius: 5px;
+    text-align: center;
+}
+
+

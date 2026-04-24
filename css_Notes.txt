@@ -1,0 +1,28 @@
+Css Notes:
+ - css (cascading style sheet) to apply styling , layouts, animations to the web pages
+ - css are in the year 1994 by the developer "hakon wium lie"
+ - the prasent version of css is css3
+ - methods to apply styling: 
+   1. inline css
+     - useing style attribute to apply style in html element
+     - applicable for only that element
+     - css selectors are not required
+     - it is more priority then internal and external css
+   2. internal css
+      - by useing <style></style> tag in head prasent
+      - it needs css selectors
+   3. external css
+      - apply styling by taking new .css file and link to html file 
+         useing <link> tag
+      - it needs css selectors
+
+
+css selectors:
+ - which are used to target html Elements to apply styling
+ - types of css selectors:
+   1. simple selectors:
+      - id(#),class(.), tag, grouping(,), universal(*) selector
+   2. combinator selectors
+   3. pseudo class selectors
+   4. pseudo element selectors
+   5. attribute selectors
