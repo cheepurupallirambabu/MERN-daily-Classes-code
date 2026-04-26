@@ -1,0 +1,447 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0a0f;
+    margin: 3px;
+}
+
+
+.navbar {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 78, 146, 0.5);
+    border-bottom: 2px solid #00d4ff;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00d4ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+
+.home-section {
+    background-image: url('./pexels-davegarcia-31085767.jpg');
+    background-size: cover;
+}
+
+.banner {
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+.banner-content h1 {
+    background: linear-gradient(45deg, #00d4ff, #0e0ed9, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-content p {
+    background: linear-gradient(90deg, #00d4ff, #7b68ee, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+    margin: 0 auto 2rem;
+    max-width: 600px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #004e92 0%, #00d4ff 100%);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 78, 146, 0.4);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #00d4ff 0%, #004e92 100%);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+.media-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    background: rgba(10, 10, 15, 0.9);
+    margin: 2rem;
+    border-radius: 15px;
+    border: 1px solid #004e92;
+    box-shadow: 0 4px 20px rgba(0, 78, 146, 0.3);
+}
+
+.media-container {
+    min-width: 500px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #000;
+    border: 2px solid #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.media-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+section {
+    padding: 3rem 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section h2 {
+    text-align: center;
+    background: linear-gradient(90deg, #00d4ff, #004e92);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #00d4ff;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.courses-section {
+    background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%);
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 78, 146, 0.3);
+    border: 1px solid #004e92;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.course-category {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #00d4ff;
+    box-shadow: 0 4px 15px rgba(0, 78, 146, 0.2);
+}
+
+.course-category h3 {
+    color: #00d4ff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #004e92;
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+}
+
+.course-list {
+    padding-left: 1.5rem;
+}
+
+.course-list li {
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    color: #00d4ff;
+    font-weight: 500;
+    align-items: center;
+    gap: 8px;
+}
+.course-list li::before {
+    content: "→";
+    color: #00d4ff;
+    margin-right: 8px;
+}
+
+.schedule-section {
+    background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%);
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 78, 146, 0.3);
+    border: 1px solid #004e92;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: #0d1b2a;
+}
+
+.schedule-table thead {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+    color: #00d4ff;
+}
+
+.schedule-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border: 1px solid #004e92;
+    color: #00d4ff;
+}
+
+.schedule-table td {
+    padding: 0.8rem 1rem;
+    border: 1px solid #004e92;
+    color: #e0e0e0;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #0a0a0f;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #1b263b;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+
+.register-section {
+    background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%);
+    margin: 2rem auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 78, 146, 0.3);
+    padding: 3rem;
+    width: 100%;
+    border: 1px solid #004e92;
+}
+
+.registration-form {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 78, 146, 0.3);
+    border: 1px solid #004e92;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+    font-weight: 700;
+    font-size: 1.0rem;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.3);
+}
+
+.form-group label::after {
+    content: " *";
+    color: #ff6b6b;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #004e92;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #0a0a0f;
+    color: #e0e0e0;
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00d4ff;
+    background: #1b263b;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 0;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #00d4ff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.radio-label:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.radio-label input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #00d4ff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 1.1rem 2rem;
+    background: linear-gradient(135deg, #004e92 0%, #00d4ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 15px rgba(0, 78, 146, 0.4);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #00d4ff 0%, #004e92 100%);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+}
+
+.footer {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+    color: #00d4ff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 2px solid #00d4ff;
+    box-shadow: 0 -4px 20px rgba(0, 78, 146, 0.3);
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .media-section {
+        flex-direction: column;
+    }
+    
+    .media-container {
+        min-width: 400px;
+        background: #000;
+        border: 2px solid #00d4ff;
+    }
+    
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-table {
+        font-size: 0.9rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .banner-content p {
+        font-size: 1rem;
+    }
+}

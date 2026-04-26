@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Educational Institute</title>
+    <link rel="stylesheet" href="Mini_Educational_Institute.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">R Educational Institute</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Welcome to R Educational Institute</h1>
+                <p>Empowering Your Feature with Quality Education</p>
+                <a href="#courses" class="btn">Explore Courses</a>
+            </div>
+        
+        <div class="media-section">
+            <div class="media-container">
+                <div class="video-wrapper" style="position: relative; display: inline-block; width: 100%;">
+                    <video src="./14471387_1920_1080_30fps.mp4" type="video/mp4" controls autoplay loop muted style="width: 100%; display: block;"></video>
+                    <div class="video-overlay-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2.5em; font-weight: bold; text-shadow: 2px 2px 8px #000; pointer-events: none;">Learn To Code</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <h2 style="border-bottom: 2px solid #00d4ff;">Courses</h2>
+        
+        <div class="courses-container">
+            <div class="course-category">
+                <h3>Web Development</h3>
+                <ul class="course-list" type="none">
+                    <li>HTML &CSS</li>
+                    <li>JavaScript</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                </ul>
+            </div>
+            
+            <div class="course-category">
+                <h3>Programming Languages</h3>
+                <ul class="course-list" type="none">
+                    <li>PYTHON</li>
+                    <li>JAVA</li>
+                    <li>C & C++</li>
+                    <li>R</li>
+                </ul>
+            </div>
+           
+            <div class="course-category">
+                <h3>Web Development</h3>
+                <ul class="course-list" type="none">
+                    <li>ENGLISH</li>
+                    <li>HINDHI</li>
+                    <li>FRANCH</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule-section">
+        <h2 style="border-bottom: 2px solid #00d4ff;">Course Schedule</h2>
+
+        
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Trainer</th>
+                    <th>Duration</th>
+                    <th>Mode</th>
+                    <th>Timings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML & CSS</td>
+                    <td>Ashooka</td>
+                    <td>2 Weeks</td>
+                    <td>Online</td>
+                    <td>Mon, Wed 6PM-8PM</td>
+                </tr>
+                <tr>
+                    <td>Python Programming</td>
+                    <td>Ms.Rahul</td>
+                    <td>4 Weeks</td>
+                    <td>Online</td>
+                    <td>Tue, Thu 5PM-7PM</td>
+                </tr>
+                <tr>
+                    <td>React.js</td>
+                    <td>Mr.Anita</td>
+                    <td>3 Weeks</td>
+                    <td>Online</td>
+                    <td>Sat, Sun 10AM-1PM</td>
+                </tr>
+                <tr>
+                    <td>Java Script</td>
+                    <td>Mr.Ashok</td>
+                    <td>6 Weeks</td>
+                    <td>Online</td>
+                    <td>Wed, Sat 4PM-6PM</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>Ms.Anita</td>
+                    <td>8 Weeks</td>
+                    <td>Online</td>
+                    <td>Tue, Sat 11AM-1PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="register" class="register-section">
+        <h2>Student Registration</h2>
+        
+        <form class="registration-form" action="#" method="post">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="course-select">Select Course</label>
+                <select id="course-select" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="html & css">HTML & CSS</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react.js">React.js</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="male" required>
+                        Male
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="gender" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Register Now</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 R Educational Institute.</p>
+    </footer>
+</body>
+</html>
