@@ -41,7 +41,82 @@ css selectors:
          - :focus  -> input tag
 
    4. pseudo element selectors
+     - ::after 
+     - ::before
+     - ::first-line
+     - ::first-letter
+     - ::selection
+     - ::placeholder
+     - ::maker
    5. attribute selectors
+     - which are used to target html elements based on attributes
+
+     eg: <h1 align="center" id="head">hello</h1>
+     <h1 id="head">hiiii</h1>
+
+     types:
+     - [attributeName="value"]
+     - [attributeName^="value"]
+     - [attributeName-="value"]
+     - [attributeName*="value"]
+     - [attributeName$="value"]
+
+color values:
+  - colorname
+  - rgb (red,gree,blue)
+  - rgba(red,green, blue,alpha)
+  - hsl(hue,saturation ,lightness)
+  - hsla(hue,saturation ,lightness,alpha)
+  - hexa code
+  - transparent
+  - color()
+
+ text properties:
+   - text-alignment
+      - text-align
+      - word-space
+      - latter-spaceing
+      - text-indent
+      - line height
+   - text decoration :
+     - text-decoration-line
+     - text-decoration-color
+     - text-decoration-style
+     -  text-decoration-thickness
+     -  text-decoration()
+
+  - text transform properties:
+    - uppercase()
+    - lowercase()
+    - capitalize()
+css boxs models:
+     - padding
+         - padding-top
+         - padding-right
+         - padding-bottom
+         - padding-left
+         - padding
+     - border
+         - border-top
+         - border-right
+         - border-bottom
+         - border-left
+         - border
+
+         - border-style
+         - border-color
+         - border-width
+         - border-radius
+             - border-top-left-radius
+             - border-top-right-radius
+             - border-bottom-left-radius
+             - border-bottom-right-radius
+             - border-radius
+     - margin
+         - margin-top
+         - margin-right
+         - margin-bottom
+         - margin-left
 
 
    

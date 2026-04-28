@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute_selector</title>
+    <style>
+        img[alt^="img"] {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+        }
+        h1[id$="g"]{
+            color: aqua;
+        }
+        h1[id|="boxing"]{
+            background-color: rgb(17, 18, 17);
+        }
+           h1[id*="x"]{
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="boxing">Boxing</h1>
+    <h1 id="boxing-tag">Boxing</h1>
+    <h1 id="boxing tag">Boxing</h1>
+    <img src="https://tse1.mm.bing.net/th/id/OIP.-tBqkSdMr-Xb6Sa3DGmNSAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="img 1">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.-tBqkSdMr-Xb6Sa3DGmNSAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="img 2">
+</body>
+</html>

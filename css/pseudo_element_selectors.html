@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head::after{
+            content: " class" ;
+        }
+        #head::before {
+            content: "🌍";
+        }
+        label::after {
+            content: "*";
+            color: red;
+        }
+        label:last-of-type::before {
+            content: "🐢";
+        }
+
+        h2::first-letter {
+            color: red;
+            font-size: 50px;
+            font-style: italic;
+            text-shadow: 3px 3px 3px black
+        }
+
+        p::first-line{
+            background-color: black;
+            color: aqua;
+        }
+        li:first-child::marker {
+            content: "👍";
+        }
+        li:nth-child(2)::marker {
+            content: "🫆";
+        }
+
+        body::selection {
+            color: aqua;
+            background-color: black;
+        }
+        input::placeholder{
+            color: aqua;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+     <h1>pseudo element selectors</h1>
+
+    <h1 id="head">welcome to day-6</h1>
+    <form action="">
+        <fieldset>
+            <h2>Register Form</h2>
+            <label for="">First Nme</label>
+            <input type="text" placeholder="Enter First name"><br><br>
+            <label for="">Email:</label>
+            <input type="Email" placeholder="Enter email">
+        </fieldset>
+    </form>
+    <ol>
+        <li>Item-1</li>
+        <li>Item-2</li>
+        <li>Item-3</li>
+        <li>Item-4</li>
+
+    </ol>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, obcaecati. Accusamus obcaecati aliquid libero at dicta magni et eius impedit quo. Sunt possimus deserunt officiis voluptas blanditiis eius placeat iure.
+    Doloremque sapiente incidunt soluta et quod, illo earum recusandae commodi alias fugiat provident veritatis voluptate rem ducimus perferendis vitae necessitatibus vel enim laborum. Aliquam, inventore laudantium deserunt architecto nesciunt harum!
+    Et repellendus dignissimos deserunt non veritatis odio consequatur eaque voluptatem iste odit illo perspiciatis, sunt autem voluptates eveniet quas cupiditate impedit id deleniti placeat temporibus! Suscipit quod voluptatem cupiditate quas!</p>
+
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam qui nemo vel sit voluptate sunt quo labore itaque officia accusantium sequi laboriosam nam, nihil assumenda eos sint vitae cum aspernatur!
+        Totam deserunt repudiandae alias provident magni dolores mollitia molestiae id, magnam porro et sequi tempore eius nihil, consequuntur quam cum accusantium maiores, dolorem ut sunt. Recusandae qui expedita libero illo?
+    </div>
+
+
+</body>
+</html>
