@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0f;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        nav {
+            position: sticky !important;
+            top: 0px !important;
+            z-index: 2;
+        }
+
+        ol {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #050508;
+            padding: 15px 20px;
+            border-bottom: 1px solid aqua;
+        }
+
+        li {
+            color: aqua;
+            background-color: #1a1a24;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px black;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            background-color: aqua;
+            color: #0a0a0f;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Hero Section */
+        #background-video {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #background-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+  
+        h1 {
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: aqua;
+            backdrop-filter: blur(10px);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            padding: 20px 50px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px rgba(0, 255, 255, 0.3);
+            font-size: clamp(24px, 5vw, 48px);
+            animation: pulse 2s ease-in-out infinite;
+            text-align: center;
+            z-index: 10;
+            background: rgba(10, 10, 15, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+
+        #electronic-devices-section {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: aqua;
+            text-align: center;
+            font-size: clamp(28px, 4vw, 40px);
+            font-style: italic;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            padding: 10px 50px;
+            border-radius: 15px;
+            z-index: 5;
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        #electronic-devices-section:hover {
+            cursor: pointer;
+            text-shadow: 0 0 15px rgba(231, 234, 234, 0.3);
+        }
+
+        #electronic-devices {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 5%;
+            max-width: 1400px;
+            width: 90%;
+            z-index: 5;
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        #electronic-devices>div {
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px;
+            padding: 20px;
+            background-color: rgba(26, 26, 36, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #electronic-devices>div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        #laptop {
+            height: 200px;
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        #laptop:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            text-align: center;
+            width: 100%;
+        }
+
+        .product-info h4 {
+            font-size: 18px;
+            color: aqua;
+            margin: 8px 0;
+        }
+
+        .product-info p {
+            color: #8a9aa7;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-container>button {
+            padding: 12px 25px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', sans-serif;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-container>button:first-child {
+            background: #00c853;
+            color: white;
+        }
+
+        .btn-container>button:last-child {
+            background: #ff3d57;
+            color: white;
+        }
+
+        .btn-container>button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #aside {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 100;
+            padding: 15px 10px;
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 30px;
+            border: 1px solid aqua;
+        }
+
+        #aside img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        #aside img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            ol {
+                padding: 10px;
+                gap: 8px;
+            }
+            
+            li {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+            
+            h1 {
+                padding: 15px 30px;
+                font-size: 24px;
+            }
+            
+            #electronic-devices {
+                padding: 10px;
+                gap: 20px;
+            }
+            
+            #aside {
+                right: 10px;
+            }
+            
+            #aside img {
+                height: 35px;
+                width: 35px;
+            }
+
+            
+        }
+
+        @media (max-width: 480px) {
+            li {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            h1 {
+                font-size: 20px;
+                padding: 12px 20px;
+            }
+            
+            .btn-container>button {
+                padding: 10px 15px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ol>
+            <li>HOME</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+            <li>HELP</li>
+            <li>LOGIN</li>
+        </ol>
+    </nav>
+
+    <main>
+        <section id="background-video">
+            <video src="./14471387_1920_1080_30fps.mp4" autoplay loop muted></video>
+        </section>
+        <section>
+            <h1>Welcome to Alpha mart</h1>
+        </section>
+        <section id="electronic-devices-section">Electronic Devices:</section>
+        <section id="electronic-devices">
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+            <div id="product-cart">
+                <img src="https://th.bing.com/th/id/OIP.P8HWMuE9neEA82PIk2N_IgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="" id="laptop">
+                <div class="product-info">
+                    <h4> Name : laptop</h4>
+                    <h4> Cost : ₹50000</h4>
+                    <h4> Rateing : 4.5/4</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="btn-container">
+                    <button>Buy</button>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div id="aside">
+                <img src="https://th.bing.com/th/id/OIP.5oBeCm3T5InU0gXmHHx38QHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                <img src="https://th.bing.com/th/id/OIP.GkLB-mM207aOg96ZtU7BawHaHa?w=194&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="">
+                <img src="https://th.bing.com/th/id/OIP.JtmXSh_uyZBaTg1eXd-NtgHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+                <img src="https://th.bing.com/th/id/OIP.mxhOrmmlwFWf7hiuEmbndwAAAA?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

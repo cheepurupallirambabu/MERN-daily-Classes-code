@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+    <style>
+        nav {
+            background-image: linear-gradient(black,transparent, rgb(2, 20, 20));
+        }
+        ol {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            justify-content: space-evenly;
+        }
+        li {
+            background-color: black;
+            color: aqua;
+            padding: 10px 20px;
+        }
+        @media screen and (max-width: 450px){
+            ol {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }   
+            li {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ol>
+            <li>Home</li>
+            <li>About</li>
+            <li>Help</li>
+            <li>Contact</li>
+            <li>Login</li>
+        </ol>
+    </nav>
+</body>
+</html>

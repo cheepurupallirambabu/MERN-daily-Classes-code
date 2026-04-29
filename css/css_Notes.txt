@@ -118,5 +118,46 @@ css boxs models:
          - margin-bottom
          - margin-left
 
+flex-properties:
+   - display: flex;
+   - flex-decoration : 
+   - flex-wrap
+   - justify-content
+   - align-items
+   - flex-grow
+   - flex-shrink
+   - flex
+
+position proprties:
+   - position : static, reletive, absolute , fixed, sticky
+   - left, right, top, bottom
+
+animations 
+  - define animations using @keyframes
+  - link that animation to html element
+
+grid properties:
+  - display : grid;
+  - grid-template-column
+  - grid-template-row
+  - row gap
+  - column-gap
+
+  - grid-row-satrt
+  - grid-row-end
+  - grid-column-start
+  - grid-column-end
+
+media queries :
+   - to build responsive webpages based on device width
+   - break points 
+      - smaller devices 0px - 450px
+      - medium devices 450px - 850px
+      - large devices 850px - 1200px
+      - extra large devices >1200px 
+
+
+
+
 
    
