@@ -5,7 +5,7 @@ three tier architecture
 front end: html, css, js, react.js, anjular.js 
 html
 
-day-2
+day--
 
 install git  
 git --version  --> to check the version of the git 

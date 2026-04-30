@@ -1,2 +1,80 @@
 Java script
 --------------
+      -  To build dynamic web applictions
+      - to add functionality to the web applictions
+      - to manipulate the html and css
+      - to achive the DOM (document object model) functionality
+      - To fetch data from the server (API) and also to send the data to the server js is required
+
+
+java VS javaScript
+
+    java                                                                          javaScript
+    --------------------------------------                            ----------------------------------------
+ - java object orented programming language                        - js is the scipting language as well as object oriented based 
+                                                                        programmiing language
+ - java will support multi threading                               - js supports the single call stack
+ - java is imperative in nature                                    - js is dynamic in type
+                                                                     (in js no need to define the data type to the veriables)
+ - java is strictlly follows the syntax                            - js is not follows strictly   
+
+Tokens :
+ - Classifications:
+   - idntifiers:
+      - variable names, class, functionnames,
+      - in place of identifiers we dont use the keywords
+   - keywords:
+     - key words are the predefine words which having its meaning
+     - in js we have 66 keywords
+   - literals :
+      - are the values give to the js code 
+        - string literals
+        - numeric literals
+   - operators :
+     - assignment
+     - relational
+     - bitwise
+     - athematic
+     - logical
+     - unary
+     - ternary
+     - shift
+     - comperision
+   - comments :
+   - separators
+     - used to superate the given code
+     - eg: [] , , , (), {} , <>
+
+datatypes in Js:
+  - primitive (immutable)    
+  - Non-primitive (mutable)         
+
+variable :
+  - are the named memory locations used to store data or values and it can change n number of times during execution
+
+  - let 
+  - const 
+  - var
+
+arrays :
+ - linear data structture used to storehomogenous or hetrogenous type of data
+ - dynamic in size
+
+ - literal way
+ - using new keyword (array object)
+
+functions:
+  - it is a block of statement which will get execute when ever we called or invoke
+  - userdefine functions
+  - predefine functions
+
+js function types:
+  - anonyms function
+  - normal or named function
+  - functional expression
+  - immediate invoke function / self calling function
+  - arrow function
+  - nested function
+  - higher order function
+  - call back function
+  - generator function
