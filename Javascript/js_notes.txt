@@ -78,3 +78,22 @@ js function types:
   - higher order function
   - call back function
   - generator function
+
+objects :
+  - which are used to store the data in the form of key and value pairs
+
+  - literal way 
+  - using new keyword (create for object class)
+
+bom (browser object model) :
+  - it contains windows object
+
+DOM (document object model):
+  - used to manipulate html and css
+  - to build dynamic web pages
+
+
+  - events :
+    - attribute way
+    - propertie way
+    - add eventlisners

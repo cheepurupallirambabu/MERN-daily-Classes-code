@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="b">
+    <script>
+    let b1 =document.getElementsByClassName("b")[0]
+    console.log(b1);
+    
+    let t1 =  document.createElement("table");
+    let tr1 = document.createElement("tr")
+    let tr2 = document.createElement("tr");
+
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let td4 = document.createElement("td");
+
+    t1.appendChild(tr1);
+    t1.appendChild(tr2);
+
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tr2.appendChild(td3);
+    tr2.appendChild(td4);
+
+    td1.innerHTML = "<img src='./interface.jpeg' alt='' height='20px' width='20px'> "
+    td2.innerHTML = "<h1>hello</h1>"
+    td3.innerText = "102"
+    td4.innerText = "103"
+    b1.appendChild(t1);
+    t1.border = 1
+    t1.cellSpacing = 0
+    t1.cellPadding = 10
+
+    tr2.removeChild(td3);
+    console.log(t1);
+    
+    
+    </script>
+    
+</body>
+</html>

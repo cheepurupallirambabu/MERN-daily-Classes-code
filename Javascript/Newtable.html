@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: gray;
+        }
+        thead {
+            background-color: yellow;
+        }
+
+        input {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    <input type="search" placeholder="Search employees">
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Salary</th>
+                <th>Address</th>
+                <th>Phone No</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+            <td>Roy</td>
+            <td>dev</td>
+            <td>50000</td>
+            <td>vizag</td>
+            <td>xxxxxxxxx</td>
+           </tr>
+           <tr>
+            <td>ravi</td>
+            <td>tester</td>
+            <td>70000</td>
+            <td>hyd</td>
+            <td>xxxxxxxxx</td>
+           </tr>
+           <tr>
+            <td>Roy</td>
+            <td>dev</td>
+            <td>50000</td>
+            <td>vizag</td>
+            <td>xxxxxxxxx</td>
+           </tr>
+           <tr>
+            <td>ram</td>
+            <td>dev</td>
+            <td>80000</td>
+            <td>vizag</td>
+            <td>xxxxxxxxx</td>
+           </tr>
+        </tbody>
+                </table>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+
+        let rows = document.querySelectorAll("tbody tr")
+        document.querySelector("input")
+        console.log()
+    </script>
+</body>
+</html>
