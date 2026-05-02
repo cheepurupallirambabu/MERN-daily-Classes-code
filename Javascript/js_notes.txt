@@ -97,3 +97,46 @@ DOM (document object model):
     - attribute way
     - propertie way
     - add eventlisners
+
+
+loops in js:
+  - loops are used to itterate the statements untill condition satisfies
+  - for loop :
+     - for (initialization, condition , increment/decrement) {
+
+     }
+  - while loop :
+     - while (condition){
+      increment/decrement ;
+     }
+  - do while loop "
+     - do {
+      increment/decrement ;
+     }while (condition)
+  - for-in loop :
+     - only used in arrays and strigs
+     - fetch only index of the array and strings
+
+     - for(variable in array/string){
+
+     }
+  - for-of loop :
+     - - only used in arrays and strigs
+     - fetch only values of the array and strings
+
+     - for(variable of array/string){
+
+     }
+  - foreach loop :
+     - it is the higher order function
+     -  used in arrays and strigs
+     - fetch index, values of the array and strings
+
+     - array.foreach(value,index,array){
+
+     }
+
+array in built methods :
+  - map()
+  - filter()
+  - reduce()

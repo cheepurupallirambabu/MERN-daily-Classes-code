@@ -66,16 +66,33 @@
             <td>xxxxxxxxx</td>
            </tr>
         </tbody>
-                </table>
-            </tr>
-        </thead>
-    </table>
+     </table>
 
+         <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Accusantium eligendi aliquam 
+            fuga beatae perspiciatis consequuntur, nulla ducimus saepe molestiae accusamus minus facilis, doloremque cumque veniam laborum! Quos aspernatur eius laudantium?</p>
+
+            <button onclick="displayPara()">click</button>
     <script>
+        let p = document.getElementById("paragraph")
 
-        let rows = document.querySelectorAll("tbody tr")
-        document.querySelector("input")
-        console.log()
+        function displayPara(){
+            p.style.display = (p.style.display == 'block') ? "none" : "block"
+        }
+
+        let rows = document.querySelectorAll("tbody tr");
+        let input = document.querySelector("input");
+
+        input.onkeyup = ()=>{
+              let inputText = input.value.toLowerCase();
+
+              rows.forEach((row) =>{
+              let rowDate = row.textContent;
+              let result = rowDate.toLowerCase().includes(inputText);
+              row.style.display = result ? "" : "none";
+              
+              });    
+        }
     </script>
 </body>
 </html>

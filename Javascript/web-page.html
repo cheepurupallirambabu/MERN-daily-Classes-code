@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-page</title>
+</head>
+
+<body>
+    <header>
+        <input type="text" placeholder="Product Name" id="productName" />
+        <input type="text" placeholder="Product Url" id="productUrl" />
+        <input type="number" placeholder="Price" id="price" />
+        <button type="submit" onclick="displayInput()">Add</button>
+    </header><br><br>
+
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Url</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+    <script>
+        let t = document.querySelector("table")
+        let detalis = [];
+
+
+        function displayInput() {
+            let pn = document.getElementById("productName").value;
+            let pu = document.getElementById("productUrl").value;
+            let p = document.getElementById("price").value;
+
+            let tr = document.createElement("tr");
+            t.appendChild(tr);
+
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+          
+            console.log(pn);
+            console.log(pu);
+
+
+            let obj = {
+                productname: pn,
+                producturl: pu,
+                price: p
+            }
+
+            detalis.push(obj);
+
+            td1.innerText = detalis[0].productname;
+            td2.innerText = detalis[0].producturl;
+            td3.innerText = detalis[0].price;
+            td4.innerHTML = `<button> Edit </button><button> Delete </button>`
+        }
+
+    </script>
+</body>
+
+</html>

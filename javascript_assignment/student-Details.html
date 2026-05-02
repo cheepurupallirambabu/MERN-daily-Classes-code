@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+            border-collapse: collapse;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: #333;
+            color: white;
+            padding: 12px;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 6px 12px;
+            margin: 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .btn-edit { background-color: #2196F3; color: white; }
+        .btn-delete { background-color: #f44336; color: white; }
+    </style>
+</head>
+<body>
+    <h2>Student Performance Details</h2>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Roll No</th>
+                <th colspan="4">Marks</th>
+                <th rowspan="2">Total Marks</th>
+                <th rowspan="2">Percentage</th>
+                <th rowspan="2">Actions</th>
+            </tr>
+            <tr>
+                <th>CNN</th>
+                <th>CPP</th>
+                <th>DSA</th>
+                <th>ADE</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+        </tbody>
+    </table>
+
+    <script>
+        
+        let students = [
+            { name: 'Ravi', rollNo: 'HU2025', marks: { CNN: 50, CPP: 78, ADE: 80, DSA: 69 } },
+            { name: 'Amit', rollNo: 'HU2026', marks: { CNN: 90, CPP: 85, ADE: 88, DSA: 92 } },
+            { name: 'Priya', rollNo: 'HU2027', marks: { CNN: 70, CPP: 65, ADE: 80, DSA: 75 } },
+            { name: 'Kiran', rollNo: 'HU2028', marks: { CNN: 55, CPP: 60, ADE: 58, DSA: 62 } },
+            { name: 'Suma', rollNo: 'HU2029', marks: { CNN: 45, CPP: 50, ADE: 40, DSA: 55 } },
+            { name: 'Rohit', rollNo: 'HU2030', marks: { CNN: 85, CPP: 80, ADE: 90, DSA: 85 } },
+            { name: 'Sneha', rollNo: 'HU2031', marks: { CNN: 60, CPP: 65, ADE: 70, DSA: 68 } },
+            { name: 'Vikram', rollNo: 'HU2032', marks: { CNN: 50, CPP: 55, ADE: 52, DSA: 58 } },
+            { name: 'Anjali', rollNo: 'HU2033', marks: { CNN: 30, CPP: 40, ADE: 45, DSA: 35 } },
+            { name: 'Rahul', rollNo: 'HU2034', marks: { CNN: 95, CPP: 92, ADE: 98, DSA: 90 } },
+            { name: 'Divya', rollNo: 'HU2035', marks: { CNN: 75, CPP: 78, ADE: 80, DSA: 72 } },
+            { name: 'Manoj', rollNo: 'HU2036', marks: { CNN: 58, CPP: 62, ADE: 60, DSA: 65 } },
+            { name: 'Kavya', rollNo: 'HU2037', marks: { CNN: 48, CPP: 50, ADE: 52, DSA: 45 } },
+            { name: 'Suresh', rollNo: 'HU2038', marks: { CNN: 88, CPP: 85, ADE: 89, DSA: 90 } },
+            { name: 'Nisha', rollNo: 'HU2039', marks: { CNN: 65, CPP: 70, ADE: 68, DSA: 75 } },
+            { name: 'Karthik', rollNo: 'HU2040', marks: { CNN: 54, CPP: 56, ADE: 59, DSA: 55 } },
+            { name: 'Swati', rollNo: 'HU2041', marks: { CNN: 40, CPP: 35, ADE: 45, DSA: 42 } },
+            { name: 'Ajay', rollNo: 'HU2042', marks: { CNN: 92, CPP: 88, ADE: 95, DSA: 89 } },
+            { name: 'Pooja', rollNo: 'HU2043', marks: { CNN: 72, CPP: 75, ADE: 78, DSA: 70 } },
+            { name: 'Ramesh', rollNo: 'HU2044', marks: { CNN: 62, CPP: 60, ADE: 65, DSA: 61 } }
+        ];
+
+        const tbody = document.getElementById("studentTableBody");
+
+    
+        function renderTable() {
+            tbody.innerHTML = ""; 
+
+            students.forEach((student, index) => {
+        
+                const total = student.marks.CNN + student.marks.CPP + student.marks.DSA + student.marks.ADE;
+                const percentage = (total / 400) * 100;
+                
+              
+                let bgColor = "";
+                if (percentage >= 85) bgColor = "#c8e6c9";      
+                else if (percentage >= 65) bgColor = "#fff9c4"; 
+                else if (percentage >= 55) bgColor = "#ffe0b2"; 
+                else bgColor = "#ffcdd2";                       
+
+                
+                const tr = document.createElement("tr");
+                tr.style.backgroundColor = bgColor;
+                
+                tr.innerHTML = `
+                    <td>${student.name}</td>
+                    <td>${student.rollNo}</td>
+                    <td>${student.marks.CNN}</td>
+                    <td>${student.marks.CPP}</td>
+                    <td>${student.marks.DSA}</td>
+                    <td>${student.marks.ADE}</td>
+                    <td><strong>${total}</strong></td>
+                    <td><strong>${percentage.toFixed(2)}%</strong></td>
+                    <td>
+                        <button class="btn-edit" onclick="editStudent(${index})">Edit</button>
+                        <button class="btn-delete" onclick="deleteStudent(${index})">Delete</button>
+                    </td>
+                `;
+                
+                tbody.appendChild(tr);
+            });
+        }
+
+        function deleteStudent(index) {
+            if (confirm("Are you sure you want to delete " + students[index].name + "'s record?")) {
+                students.splice(index, 1);
+                renderTable(); 
+            }
+        }
+
+        function editStudent(index) {
+            let student = students[index];
+            
+            let newName = prompt("Edit Name:", student.name) || student.name;
+            let newRoll = prompt("Edit Roll No:", student.rollNo) || student.rollNo;
+            let newCNN = parseInt(prompt("Edit CNN marks (0-100):", student.marks.CNN));
+            let newCPP = parseInt(prompt("Edit CPP marks (0-100):", student.marks.CPP));
+            let newDSA = parseInt(prompt("Edit DSA marks (0-100):", student.marks.DSA));
+            let newADE = parseInt(prompt("Edit ADE marks (0-100):", student.marks.ADE));
+
+            students[index] = {
+                name: newName,
+                rollNo: newRoll,
+                marks: { 
+                    CNN: isNaN(newCNN) ? student.marks.CNN : newCNN, 
+                    CPP: isNaN(newCPP) ? student.marks.CPP : newCPP, 
+                    DSA: isNaN(newDSA) ? student.marks.DSA : newDSA, 
+                    ADE: isNaN(newADE) ? student.marks.ADE : newADE 
+                }
+            };
+            
+            renderTable(); 
+        }
+
+        renderTable();
+    </script>
+</body>
+</html>

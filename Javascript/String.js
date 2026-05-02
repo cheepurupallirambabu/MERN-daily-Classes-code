@@ -20,6 +20,10 @@ console.log(s.concat("is a programming language"));
 console.log(s.slice(1,7));
 console.log("HELLO".toLowerCase());
 
+//console.log(s.includes("j"))
+
+
+
 
 
 

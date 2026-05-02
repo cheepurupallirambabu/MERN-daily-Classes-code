@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [10,20,30,40];
+        let arr2 = [50,null, {name :"ravi", role:"dev"},()=>{console.log("hello");
+        }];
+
+        let arr3 = [...arr1,...arr2,'html','css',true];
+        console.log(arr3);
+
+        let [a,b,c,d]= arr1;
+
+        console.log(a,c,c,d);
+
+        let [r,m,n,v]=arr2;
+        console.log(r);
+        console.log(m);
+        console.log(n);
+        v();
+        
+
+        // spread operates on objects
+
+        let emp1 = {
+            name:"ravi",
+            phone: 1234567890
+        }
+
+        let orderDetails = {
+            produtNmae :"mobile",
+            price : 5000,
+            status: "Done"
+            
+        }
+
+        let orderHistory = {
+            ...emp1,
+            ["name"]:"hello"
+        }
+
+        console.log(orderHistory);
+        
+    </script>
+</body>
+</html>
