@@ -1,0 +1,20 @@
+[{
+        "name": "ravi",
+        "rollno": 500,
+        "active":true
+       },
+{
+        "name": "rani",
+        "rollno": 500,
+        "active":true,
+        "skills": ["html","css","js"],
+        "address":{
+            "city":"vizag",
+            "state":"ap",
+            "pincode":53001
+        }
+    }
+
+]
+
+     

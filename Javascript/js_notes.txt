@@ -140,3 +140,48 @@ array in built methods :
   - map()
   - filter()
   - reduce()
+
+json (javascript object notation) :
+  - json similar to js object
+  eg :
+       {
+        'name': 'ravi',
+        'rollno': 500,
+        'active':true
+       }
+
+       {
+        'name': 'roy',
+        'rollno': 400,
+        'active':true
+       }
+
+asynchronous :
+ - whch is done by useing 
+    - promises
+    - time intervalls
+
+type casting :
+  - internal/implicit type casting
+     - js engin will convert one type to another type automatically
+  - external/explicit type casting
+      - user forcefully convert one type to another type
+
+
+time intervalls :
+  - setTimeout()
+  - setIntervals()
+
+   - this both are the higherorder functions 
+   - which are execute at last 
+
+promises :
+  - is the object used to handle evualtial comptletion(or failed) of results 
+  - pending state 
+  - fullfill state 
+  - Reject state  
+  - we can handle the promises
+      - using then() and cathch()
+      - usinf await and asyc()
+
+

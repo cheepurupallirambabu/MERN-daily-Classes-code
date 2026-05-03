@@ -1,0 +1,16 @@
+[
+    {
+        "name": "java fullstack",
+        "duration":"6 monts",
+        "fees": "6500",
+        "topic" : ["core java","jdbc","hibetnates ","servlets","spring MVC","spring Boot","spring Microservices"],
+        "poster": ""
+    },{
+        "name": "Mern",
+        "duration":"5 monts",
+        "fees": 6200,
+        "topics" : ["html","css","js","react","mango db","angular js","sql"],
+        "poster": ""
+    }
+    
+]

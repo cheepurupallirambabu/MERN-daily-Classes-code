@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 20px;
+            padding: 10px;
+            background-color: pink;
+            border-radius: 20px;
+            align-items: center;
+        }
+        div:nth-child(odd) {
+            background-color: skyblue;
+        }
+        ol {
+            list-style: none;
+        }
+        span {
+            font-weight: bold;
+            font-size: 19px;
+        }
+        img {
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        let apiUrl = "https://api.github.com/users"
+        let body = document.querySelector("body");
+
+       fetch(apiUrl).then((res)=>res.json()).then((users)=>{
+        users.forEach((user) => {
+            console.log(user.login);
+            
+
+            let div = document.createElement("div");
+            let img = document.createElement("img");
+            let ol = document.createElement("ol");
+
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            let li3 = document.createElement("li");
+
+            body.appendChild(div);
+
+            div.appendChild(img);
+            div.appendChild(ol);
+
+            ol.appendChild(li1);
+            ol.appendChild(li2);
+            ol.appendChild(li3);
+
+            li1.innerHTML = `<span>User name:</span> ${user.login}`;
+            li2.innerHTML = `<span>User id:</span> ${user.id}`;
+            li3.innerHTML = `<span>User type:</span> ${user.user_view_type}`;
+
+            img.src = `${user.avatar_url}`
+            img.style.width = "100px";
+            img.style.height = "100px";
+
+        
+        });
+       }).catch((err)=>{console.log(err);
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let jsonData = `[{
+        "name": "ravi",
+        "rollno": 500,
+        "active":true
+    },{
+        "name": "rani",
+        "rollno": 500,
+        "active":true,
+        "skills": ["html","css","js"],
+        "address":{
+            "city":"vizag",
+            "state":"ap",
+            "pincode":53001
+        }
+    }]`
+
+        let colageDeatils = {
+            "name": "rani",
+            "rollno": 500,
+            "active": true,
+            "skills": ["html", "css", "js"],
+            "address": {
+                "city": "vizag",
+                "state": "ap",
+                "pincode": 53001
+            }
+        }
+
+        console.log(jsonData);
+
+        console.log(JSON.parse(jsonData));
+
+
+
+
+
+        let obj = JSON.stringify(colageDeatils);
+        console.log(obj);
+
+        document.write(obj);
+
+        localStorage.setItem("collage", obj);
+
+        let obj1 = JSON.parse(obj);
+        console.log(obj1);
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPortal - E-Learning Platform</title>
+    <link rel="stylesheet" href="Eduportal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="main">
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduPortal</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#courses">Courses <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-category="all">All Courses</a></li>
+                            <li><a href="#" data-category="web-development">Web Development</a></li>
+                            <li><a href="#" data-category="ai">Artificial Intelligence</a></li>
+                            <li><a href="#" data-category="data-science">Data Science</a></li>
+                            <li><a href="#" data-category="mobile">Mobile Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#leaderboard">Leaderboard</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search courses..." aria-label="Search courses">
+                    <button id="searchBtn" aria-label="Search"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="notification-btn" id="notificationBtn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge" id="notifBadge">3</span>
+                </button>
+                <button class="bookmark-btn" id="bookmarkBtn" aria-label="Bookmarks">
+                    <i class="fas fa-bookmark"></i>
+                    <span class="bookmark-count" id="bookmarkCount">0</span>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Panel -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <button id="closeNotif"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="notification-list" id="notificationList">
+            <div class="notification-item unread">
+                <i class="fas fa-quiz"></i>
+                <div class="notif-content">
+                    <p>New Quiz Added: JavaScript Fundamentals</p>
+                    <span class="notif-time">2 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <i class="fas fa-certificate"></i>
+                <div class="notif-content">
+                    <p>Congratulations! You earned a badge</p>
+                    <span class="notif-time">5 hours ago</span>
+                </div>
+            </div>
+            <div class="notification-item unread">
+                <i class="fas fa-course"></i>
+                <div class="notif-content">
+                    <p>New Course: Advanced React Patterns</p>
+                    <span class="notif-time">1 day ago</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bookmark Panel -->
+    <div class="bookmark-panel" id="bookmarkPanel">
+        <div class="bookmark-header">
+            <h3>Saved Courses</h3>
+            <button id="closeBookmark"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="bookmark-list" id="bookmarkList">
+            <p class="empty-state">No bookmarked courses yet</p>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Welcome to <span class="highlight">EduPortal</span></h1>
+                <p>Your gateway to endless learning opportunities. Explore courses, track progress, and achieve your goals.</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <a href="#dashboard" class="btn btn-secondary">My Dashboard</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <h3>50+</h3>
+                    <p>Courses</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>10K+</h3>
+                    <p>Students</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-award"></i>
+                    <h3>100+</h3>
+                    <p>Instructors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="categories" id="categories">
+        <h2>Course Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" data-category="web-development" tabindex="0" role="button">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, React, Node.js</p>
+            </div>
+            <div class="category-card" data-category="ai" tabindex="0" role="button">
+                <i class="fas fa-brain"></i>
+                <h3>Artificial Intelligence</h3>
+                <p>Machine Learning, Deep Learning, NLP</p>
+            </div>
+            <div class="category-card" data-category="data-science" tabindex="0" role="button">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Science</h3>
+                <p>Python, R, Analytics, Visualization</p>
+            </div>
+            <div class="category-card" data-category="mobile" tabindex="0" role="button">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Development</h3>
+                <p>Flutter, React Native, Swift, Kotlin</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filters" id="filters">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="ai">Artificial Intelligence</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="mobile">Mobile Development</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="difficultyFilter">Difficulty:</label>
+                <select id="difficultyFilter" aria-label="Filter by difficulty">
+                    <option value="all">All Levels</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <h2>Featured Courses</h2>
+        <div class="course-grid" id="courseGrid">
+            <!-- Courses will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Course Recommendations -->
+    <section class="recommendations" id="recommendations">
+        <h2>Recommended For You</h2>
+        <div class="recommendation-grid" id="recommendationGrid">
+            <!-- Recommendations will be dynamically inserted -->
+        </div>
+    </section>
+
+    <!-- Course Details Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Course details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard" id="dashboard">
+        <h2>Student Dashboard</h2>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-book-open"></i> Enrolled Courses</h3>
+                <div class="enrolled-courses" id="enrolledCourses">
+                    <p class="empty-state">No courses enrolled yet</p>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                <div class="achievements" id="achievements">
+                    <div class="achievement" data-badge="fast-learner">
+                        <i class="fas fa-bolt"></i>
+                        <span>Fast Learner</span>
+                    </div>
+                    <div class="achievement" data-badge="quiz-master">
+                        <i class="fas fa-star"></i>
+                        <span>Quiz Master</span>
+                    </div>
+                    <div class="achievement" data-badge="bookworm">
+                        <i class="fas fa-book"></i>
+                        <span>Bookworm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-card">
+                <h3><i class="fas fa-chart-pie"></i> Progress Overview</h3>
+                <div class="progress-stats" id="progressStats">
+                    <div class="progress-item">
+                        <span>Total Progress</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="totalProgress" style="width: 0%"></div>
+                        </div>
+                        <span id="totalProgressText">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz" id="quiz">
+        <h2>Test Your Knowledge</h2>
+        <div class="quiz-container" id="quizContainer">
+            <div class="quiz-intro" id="quizIntro">
+                <h3>Ready to test yourself?</h3>
+                <p>Take a quiz on any course to check your understanding</p>
+                <select id="quizCourseSelect" aria-label="Select course for quiz">
+                    <option value="">Select a course</option>
+                </select>
+                <button class="btn btn-primary" id="startQuiz">Start Quiz</button>
+            </div>
+            <div class="quiz-content" id="quizContent" style="display: none;">
+                <div class="quiz-header">
+                    <span id="quizProgress">Question 1 of 5</span>
+                    <span id="quizScore">Score: 0</span>
+                </div>
+                <div class="quiz-question" id="quizQuestion">
+                    <!-- Question will be inserted here -->
+                </div>
+                <div class="quiz-options" id="quizOptions">
+                    <!-- Options will be inserted here -->
+                </div>
+                <button class="btn btn-primary" id="nextQuestion">Next Question</button>
+            </div>
+            <div class="quiz-result" id="quizResult" style="display: none;">
+                <h3>Quiz Complete!</h3>
+                <div class="result-score">
+                    <span id="finalScore">0</span>
+                    <span>/ 5</span>
+                </div>
+                <p id="resultMessage">Keep practicing!</p>
+                <button class="btn btn-primary" id="retakeQuiz">Retake Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard" id="leaderboard">
+        <h2>Leaderboard</h2>
+        <div class="leaderboard-container">
+            <div class="leaderboard-header">
+                <span>Rank</span>
+                <span>Student</span>
+                <span>Points</span>
+                <span>Courses</span>
+            </div>
+            <div class="leaderboard-list" id="leaderboardList">
+                <!-- Leaderboard entries will be dynamically inserted -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <h2>My Profile</h2>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                    <button class="edit-avatar" aria-label="Change avatar"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="profile-info">
+                    <input type="text" id="studentName" placeholder="Enter your name" value="Student Name">
+                    <p class="student-email">student@eduportal.com</p>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="profile-stat">
+                    <i class="fas fa-book"></i>
+                    <span id="profileCourses">0</span>
+                    <p>Courses</p>
+                </div>
+                <div class="profile-stat">
+                    <i class="fas fa-check-circle"></i>
+                    <span id="profileCompleted">0</span>
+                    <p>Completed</p>
+                </div>
+                <div class="profile-stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="profilePoints">0</span>
+                    <p>Points</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Feedback Form -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+                <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="course">Course Related</option>
+                    <option value="technical">Technical Issue</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>EduPortal</h3>
+                <p>Empowering learners worldwide with quality education.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#leaderboard">Leaderboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 EduPortal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-info-circle"></i>
+        <span id="toastMessage">Notification message</span>
+    </div>
+
+    <script src="Eduportal.js"></script>
+</body>
+</html>
