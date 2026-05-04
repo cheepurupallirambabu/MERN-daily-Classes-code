@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <h1>Table with calulation -Q1</h1>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>name</th>
+            <th>cnn</th>
+            <th>java</th>
+            <th>python</th>
+            <th>total</th>
+            <th>percentage</th>
+        </tr>
+        <tr id="tr1">
+            <td>ram</td>
+            <td>80</td>
+            <td>67</td>
+            <td>89</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr id="tr2">
+            <td>venky</td>
+            <td>90</td>
+            <td>77</td>
+            <td>99</td>
+        </tr>
+
+         <tr id="tr3">
+            <td>satish</td>
+            <td>89</td>
+            <td>75</td>
+            <td>90</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <script>
+        let rows = document.querySelectorAll("table tr");
+
+        for (let i = 1; i < rows.length; i++) {
+            let row = rows[i];
+            let cells = row.querySelectorAll("td");
+            
+            let mark1 = Number(cells[1].innerText);
+            let mark2 = Number(cells[2].innerText);
+            let mark3 = Number(cells[3].innerText);
+            
+    
+            let total = mark1 + mark2 + mark3;
+            let percentage = ((total / 300) * 100).toFixed(2);
+            
+
+            if (cells.length > 4) {
+                cells[4].innerText = total;
+            } else {
+                let totalTd = document.createElement("td");
+                totalTd.innerText = total;
+                row.appendChild(totalTd);
+            }
+            
+            if (cells.length > 5) {
+                cells[5].innerText = percentage + "%";
+            } else {
+                let percentTd = document.createElement("td");
+                percentTd.innerText = percentage + "%";
+                row.appendChild(percentTd);
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

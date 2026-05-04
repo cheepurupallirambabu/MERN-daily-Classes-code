@@ -1,0 +1,40 @@
+react notes 
+-----------
+ - collection of codes we call as a library
+ - collection of librarys we call as a framework
+
+ - react is a component based
+ - spa (singe page applications)
+ - to create a react applications  
+     - npm -> manager -> npx create-react-app projectname
+     - npx -> exetuable 
+
+ - react is a small library
+
+ jsx (js and xml)
+    - react will understand the jsx code but the browsers will not understand the
+       jsx it understand only the js code 
+    - to conver jsx to js we have next generation compailer called 
+      "bable Js"
+    - jsx is similar to html,here it allows both js and html code
+
+    - Rules :
+      - jsx fileName is always start with capital letters
+      - here we can achive javascript expression 
+      - in return function html contains parent tag
+      - jsx will allow empty fragements (<> </>) 
+
+componets in react:
+  - components are the smallest UI blocks
+   
+   -types:
+     - class based components
+       - class key word was used to create class based components
+       - in this constructors, super keyword, this key word  is prasent
+          render () , life cycle methods are present
+       - which are called statefull
+     - function based components
+
+
+
+
