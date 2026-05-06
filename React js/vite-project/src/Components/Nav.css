@@ -1,0 +1,37 @@
+nav {
+    background-color: rgb(11, 11, 11);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 50px;
+    background-color: black;
+    align-items: center;
+    padding: 0px
+}
+li {
+    background-color: black;
+    color: aqua;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 1px solid aqua;
+    list-style: none;
+
+}
+
+li:hover {
+    background-color: aqua;
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+    box-shadow: 2px 2px 2px rgb(178, 234, 234);
+
+}

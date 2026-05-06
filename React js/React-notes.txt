@@ -33,7 +33,55 @@ componets in react:
        - in this constructors, super keyword, this key word  is prasent
           render () , life cycle methods are present
        - which are called statefull
-     - function based components
+     - function based components :
+         - in this we are using arrow function or norml or functional expression
+         - in this constructors, super keyword, this key word  are not prasent
+          render () , life cycle methods are not present
+
+          - also called sateless components
+
+         1.  const ComponentName ()=> {
+            return ()
+          }
+          export default ComponentName;
+
+         2.  functon ComponetName (){
+          return ()
+
+         }
+         export default ComponetName;
+
+         3. const ComponentName= function (){
+          return ()
+         }
+         export default ComponentName;
+         
+State in React:
+  - used to hold the data 
+  - mutable in nature
+  - present in only in cbc
+
+states in function based Components :
+  - hooks are used to make function based Components state full
+  - hooks are used in function based Components 
+  - hooks are introduce i 16.8 react version
+  - Eg :
+     - useState()  -> declear the state
+     - useEffect()
+     - useNavigate()
+     - useMemo()
+     - useContext()
+     - useReduce()
+     - useRef()
+etc....
+
+
+Props :
+  - are used to transfer data from one compnents to another
+  - are immutable in nature
+  - are present both in cbc and fbc
+
+         
 
 
 

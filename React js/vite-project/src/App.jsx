@@ -1,18 +1,26 @@
 import { useState } from 'react'
-import ClassBasedComponet from './ClassBasedComponet';
-import Register from './Register';
-import './Form-styling.css'
+import Nav from './Components/Nav'
+import Products from './Components/Products'
+import './Components/Nav.css'
+
 
 
 const App = () => {
+  // let myDetails ={
+  //   Name : "CheepurupalliRambabu",
+  //   RollNo : "23NR1A0538",
+  //   Branch : "CSE",
+  //   Role : "Student",
+  //   CollageName : "BITS Vizag",
+  // }
 
   return (
     <>
-    <h1>react app</h1>
-    <ClassBasedComponet />
-    <Register />
+    <Nav />
+    <Products />
     </> 
   )
 }
+
 
 export default App;
