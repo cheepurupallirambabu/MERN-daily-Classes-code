@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 //import Login from './Pages/Login';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -15,6 +15,16 @@ function Register() {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+
+
+  const handleReset =()=> {
+    setDetails({
+      email: "",
+      password: "",
+    })
+  }
 
   const handleChange = (e) => {
     setDetails({ ...details, [e.target.name]: e.target.value })
@@ -29,6 +39,9 @@ function Register() {
       email: "",
       password: "",
     })
+      setTimeout (()=>{
+      navigate('/login')
+    },3000)
 
   }
   return (
@@ -58,9 +71,10 @@ function Register() {
           <span>If you already have an account? <b><a href="./login">Login</a></b></span>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" style={{margin : "30px"}}>
           Submit
         </Button>
+        <Button variant="danger" type="reset" onClick={handleReset}>Cancle</Button>
       </Form>
       <ToastContainer />
     </div>

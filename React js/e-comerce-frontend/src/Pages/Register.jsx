@@ -16,6 +16,7 @@ function Register() {
     password: "",
     adderss: "",
     city: "",
+    userType: "user",
     state: "",
     zip: "",
   });
@@ -35,9 +36,18 @@ function Register() {
       password: "",
       adderss: "",
       city: "",
+      userType: "user",
       state: "",
       zip: "",
     })
+
+    const handleReset =()=> {
+    setDetails({
+      email: "",
+      password: "",
+      otp:'',
+    }) 
+  }
 
   }
   return (
@@ -60,8 +70,20 @@ function Register() {
             <Form.Control type="email" value={details.email} onChange={handleChange} placeholder="Enter Email" required name="email" />
           </Form.Group>
 
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>User Type</Form.Label>
+            
+            <Form.Select required name="userType" onChange={handleChange} value={details.userType}>
+              <option value="">Choose User Type..</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </Form.Select>
+
+          </Form.Group>
+
+
           <Form.Group as={Col} controlId="formGridPassword" >
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Create Password</Form.Label>
             <Form.Control type="password" value={details.password} onChange={handleChange} placeholder="*****" required name="password" />
           </Form.Group>
         </Row>
@@ -98,9 +120,10 @@ function Register() {
           <span>If you already have an account? <b><a href="/login">Login</a></b></span>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" style={{margin : "30px"}}>
           Submit
         </Button>
+        <Button variant="danger" type="reset" onClick={handleReset}>Reset</Button>
       </Form>
       <ToastContainer />
     </div>

@@ -58,3 +58,9 @@
     font-style: italic;
 
 }
+
+.otp-in {
+    position: relative;
+    right: 0px;
+    width: 200px;
+}
