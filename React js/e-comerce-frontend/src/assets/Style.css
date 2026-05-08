@@ -64,3 +64,14 @@
     right: 0px;
     width: 200px;
 }
+
+#cart-btn {
+    position: fixed;
+    z-index: 2;
+    border-radius: 10px;
+    padding: 8px;
+    border: none ;
+    top: 300px;
+    background-color: #727ac7;
+    font-style: italic;
+}

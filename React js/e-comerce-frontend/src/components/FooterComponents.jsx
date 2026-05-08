@@ -1,19 +1,18 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 
 function FooterComponents() {
   return (
-    <Card className="text-center">
-      <Card.Header>Featured</Card.Header>
-      <Card.Body>
-        <Card.Title>Special title treatment</Card.Title>
-        <Card.Text>
-          With supporting text below as a natural lead-in to additional content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-      <Card.Footer className="text-muted">2 days ago</Card.Footer>
-    </Card>
+    <footer className="bg-dark text-light py-4 mt-auto w-100">
+      <Container className="text-center">
+        <h5>Alpha Mart</h5>
+        <p className="text-secondary mb-1">
+          Your one-stop destination for everything you need.
+        </p>
+        <small className="text-muted">&copy; {new Date().getFullYear()} Alpha Mart. All rights reserved.</small>
+      </Container>
+    </footer>
   );
 }
 

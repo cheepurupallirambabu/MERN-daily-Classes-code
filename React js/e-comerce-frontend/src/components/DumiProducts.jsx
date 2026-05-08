@@ -1,59 +1,70 @@
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import { useContext } from "react";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import { CartContext } from "../App";
 
 function DumiProducts() {
-  const products = [
-    {
+  let products = [
+    {id:1,
       imageSrc:
         'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80',
       title: 'Smart Phones',
-      text: 'Latest devices with sleek design and reliable performance.',
     },
-    {
+    {id:2,
       imageSrc:
         'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80',
       title: 'Headphones',
-      text: 'Premium sound and comfort for daily work and entertainment.',
     },
-    {
+    {id:3,
       imageSrc:
         'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
       title: 'Shoes',
-      text: 'Trending styles for casual wear, travel, and training.',
     },
-    {
+    {id:4,
       imageSrc:
         'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80',
       title: 'Watches',
-      text: 'Modern accessories that pair clean looks with utility.',
     },
   ];
 
+  const { items, addToCart } = useContext(CartContext);
+
   return (
-    <Container className="py-3">
-      <Row xs={1} md={2} lg={4} className="g-4">
-        {products.map((product) => (
-          <Col key={product.title}>
-            <Card className="h-100 shadow-sm">
+    <Row xs={1} md={4} className="g-4">
+      {products.map((item, idx) => {
+      const isPresent= items.some((product)=>product.id==item.id);
+      console.log("Is present",isPresent);
+      
+        return (
+          <Col key={idx} className="mb-4">
+            <Card className="h-100 shadow-sm border-0">
               <Card.Img
                 variant="top"
-                src={product.imageSrc}
-                alt={product.title}
-                style={{ height: '220px', objectFit: 'cover' }}
+                src={item.imageSrc}
+                style={{ height: "290px", objectFit: "cover" }}
               />
-              <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
-                <Card.Text>{product.text}</Card.Text>
+              <Card.Body className="d-flex flex-column">
+                <Card.Title className="text-center">{item.title}</Card.Title>
+                <Card.Text className="text-muted text-center flex-grow-1">
+                  High-quality {item.title.toLowerCase()} perfect for your everyday needs.
+                </Card.Text>
+                <div className="d-flex justify-content-between mt-3 gap-2">
+                  <button
+                    className="btn btn-warning flex-grow-1"
+                    onClick={() => addToCart(item)}
+                    disabled={isPresent?true:false}
+                  >
+                    {isPresent ? "Added" : "Add To Cart"}
+                  </button>
+                  <button className="btn btn-success flex-grow-1">Buy Now</button>
+                </div>
               </Card.Body>
             </Card>
           </Col>
-        ))}
-      </Row>
-      <button className=''>Add Tocart</button>
-      <button></button>
-    </Container>
+        );
+      })}
+    </Row>
   );
 }
 

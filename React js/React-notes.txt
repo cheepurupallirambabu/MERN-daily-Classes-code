@@ -81,6 +81,13 @@ Props :
   - are immutable in nature
   - are present both in cbc and fbc
 
+
+telwind css:
+ - is the frontend frame work used to build frontend responcive ui
+
+contaxt api:
+  - 
+
          
 
 

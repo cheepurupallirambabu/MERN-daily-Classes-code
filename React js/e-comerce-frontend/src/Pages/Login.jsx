@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import emailjs from '@emailjs/browser';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -79,43 +81,48 @@ function Login() {
 
 
   return (
-    <div id='form-container'>
-      <Form onSubmit={handlelogin}>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter Email" required name="email" onChange={handleChange} value={loginDetails.email} />
-          </Form.Group>
-        </Row>
+    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+      <Card className="p-4 shadow-sm border-0" style={{ width: "100%", maxWidth: "500px", borderRadius: "12px" }}>
+        <h2 className="text-center mb-4 text-primary fw-bold">Login</h2>
+        <Form onSubmit={handlelogin}>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control type="email" placeholder="Enter Email" required name="email" onChange={handleChange} value={loginDetails.email} />
+            </Form.Group>
+          </Row>
 
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Enter password" required name="password" onChange={handleChange} value={loginDetails.password} />
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Col><Button type='button' onClick={generateOtp}>Generate Otp</Button></Col>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Control type="number" placeholder="Enter otp" required name="otp" onChange={handleChange} value={loginDetails.otp} className='otp-in' />
-          </Form.Group>
-        </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Enter password" required name="password" onChange={handleChange} value={loginDetails.password} />
+            </Form.Group>
+          </Row>
+          
+          <Row className="mb-4 align-items-end">
+            <Col xs={12} sm={6} className="mb-3 mb-sm-0">
+              <Button variant="outline-primary" className="w-100" type='button' onClick={generateOtp}>Generate OTP</Button>
+            </Col>
+            <Form.Group as={Col} xs={12} sm={6} controlId="formGridOtp">
+              <Form.Label>OTP Code</Form.Label>
+              <Form.Control type="number" placeholder="Enter OTP" required name="otp" onChange={handleChange} value={loginDetails.otp} className='otp-in' />
+            </Form.Group>
+          </Row>
 
-        <Form.Group className="mb-3">
-          <span>If you don't have an account? <b><a href="/register">Register</a></b></span>
-        </Form.Group>
+          <Form.Group className="mb-4 text-center">
+            <span className="text-muted">Don't have an account? <b><a href="/register" className="text-decoration-none">Register</a></b></span>
+          </Form.Group>
 
-        <Button variant="primary" type="submit" style={{ margin: "10px 30px" }}>
-          Submit
-        </Button>
-        <Button variant="danger" type="reset" onClick={handleReset}>Reset</Button>
-      </Form>
+          <div className="d-grid gap-2">
+            <Button variant="primary" type="submit" size="lg">Login</Button>
+            <Button variant="light" type="reset" onClick={handleReset}>Reset</Button>
+          </div>
+        </Form>
+      </Card>
       <ToastContainer />
-    </div>
+    </Container>
   );
 }
 
 export default Login;
 //npm install react-toastify
-
-
