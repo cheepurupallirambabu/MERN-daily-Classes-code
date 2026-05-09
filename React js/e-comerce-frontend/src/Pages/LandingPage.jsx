@@ -24,7 +24,7 @@ const LandingPage = () => {
         navigate('/cart')
       }}>Cart {items.length} </button>
         <CarouselContainer />
-        <h1>Prodeucts</h1>
+       <h2 className="mb-4 text-center text-primary pt-3">Prodeucts</h2>
         <DumiProducts />
         <FooterComponents />
     </div>

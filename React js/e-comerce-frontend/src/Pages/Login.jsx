@@ -67,6 +67,7 @@ function Login() {
       e.preventDefault();
       if (mailOtp == loginDetails.otp && loginDetails.password != "") {
         toast.success("Login successfully!")
+        localStorage.setItem("Token","23NR1A0538")
         navigate('/')
 
       }
