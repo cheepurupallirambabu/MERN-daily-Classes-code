@@ -85,8 +85,15 @@ Props :
 telwind css:
  - is the frontend frame work used to build frontend responcive ui
 
-contaxt api:
-  - 
+
+use Memo:
+  - if will increases performance of the application
+  - is used to memorize the large amount of calculations 
+  - it will prevent re-rendering of the components unnassay
+  - usememo hook will exeacute during components rendering
+  - useMemo(()=> {}.[])
+
+
 
          
 

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import Factorial from './Factorial';
+import Fsmodule from './Fsmodule';
 
 function App() {
   const [count,setCount] = useState(0);
@@ -31,6 +32,8 @@ function App() {
   
   return (
     <>
+
+    <Fsmodule />
     <Factorial />
     <div className="bg-[url(https://i.pinimg.com/736x/d6/20/33/d62033ee49601c7b4b7d886b3d09dfe9.jpg)] p-5 bg-no-repeat w-100% h-200 bg-cover bg-center flex flex-col justify-center">
       <h1 className="text-center text-3xl font-bold bg-red-500 text-white p-3 rounded-4xl shadow-xl shadow-amber-300 m-8">hello</h1>

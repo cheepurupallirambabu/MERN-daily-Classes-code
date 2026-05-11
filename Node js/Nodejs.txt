@@ -1,0 +1,22 @@
+Node js :
+
+  - which create a v8 engine to run the javascript
+   -it is a run time Server side js runtime environment
+
+userDefined Models :
+  - any function defined by the user 
+  - expor one module from one file to another file 
+       - module.export = moduleName
+        - module.exports = {moduleName1,moduleName2,moduleName3...}
+
+  - import exported modules :
+      - const {moduleName1, moduleName2,..} = require("fileName")
+Node core inbuilt Modules :
+  - fs,os,path,http
+  - fs :
+    - it allows reading ,writeing,updateing,deleting files..
+
+    - fs.readFile()
+    - writeFile()
+    - appendFile()
+    - unink()
