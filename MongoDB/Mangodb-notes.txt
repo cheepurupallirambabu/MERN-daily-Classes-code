@@ -48,3 +48,34 @@ operation :
   - $unset
   - $inc
   - $rename
+
+
+aggregate functions :
+   - used to perform operation on stage by stage
+   - db.collectionName.aggregate({filter condition})  or
+   - db.collectionName.aggregate([
+      {stage 1},{stage 2},...
+   ])
+
+
+aggregate operators:
+  - $match
+  - $group
+  - $min
+  - $max
+  - $avg
+  - $sum
+  - $lookup
+  - unwind 
+  - $project
+  - $sort
+  - $limit
+
+  db.orders.aggregate(
+  {$lookup:{
+    from:"customar",
+    localField:"_id",
+    foreignField:"customer_id",
+    as:"customar_and_order"
+  }}
+)
