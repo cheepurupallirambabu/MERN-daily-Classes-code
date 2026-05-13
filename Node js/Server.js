@@ -1,7 +1,7 @@
-const {displey,test,name} = require('./model')
+const {display,test,name} = require('./model')
 const {displayUser,postUsers,removeUsers,displayEmail, updateName} = require('./store/UserStorage')
 
-displey()
+display()
 
 const user =test();
 console.log(user);
@@ -19,24 +19,8 @@ removeUsers("sai")
 console.log(displayUser());
 console.log(displayEmail("admin@2"));
 
-console.log("updateing Name of the user based on the email.....");
+console.log("updating Name of the user based on the email.....");
 
 
 
 console.log(updateName("admin@2","roy"));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

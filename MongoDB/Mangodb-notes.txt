@@ -1,0 +1,50 @@
+Database :
+   - we can store the Database
+    -types of db :
+      - structured Data
+         eg : sql.mysql, sql Server , postgre sql,oracle
+      - semi-structured Data
+          eg : nosql Database 
+           - its used to store the data but it stores the data not fit for teridistional database
+
+           1. mongoDB : document formate
+           2. cassandra -column-family
+           3. hbase - column-family
+           4. Neo4J - node
+           5. raik - key-value pairs
+      - Unstructured Data
+
+MongoDB :
+  - nosqul database used to store the data in the form of document formate
+
+  eg : dtabase -> collection -> document -> fields
+
+  eg : collage -> faculty  ->{name:"",role:"",salary:"",etc...},{},...
+               -> students
+               -> accounts
+
+- create a database : use databaseName
+- collection : db.createCollection('columnName')
+- Document : 
+- data types:
+    - 
+-retrive data /documents:
+  - findOne()
+      - db.collectionName.findOne({flter condition},{projection})
+  - find()
+  - whos age 23 dep= it
+
+  db.Student_Details.find({age:23,department:"IT"},{name:1})
+
+  update document fields :
+    - updateOne()
+
+       - db.collectionName.updateOne({filter condition},{updated quary})
+    - updateMany()
+       - db.collectionName.updateMany({filter condition},{updated quary})
+
+operation : 
+  - $set
+  - $unset
+  - $inc
+  - $rename

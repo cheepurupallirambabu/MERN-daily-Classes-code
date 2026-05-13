@@ -23,8 +23,6 @@ const req = http.request('http://localhost:5000/getusers',(res)=>{
         
 
     })
-
-
     
 })
  req.end();

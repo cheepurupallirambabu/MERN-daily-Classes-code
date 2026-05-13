@@ -1,5 +1,5 @@
 
-function displey () {
+function display () {
     console.log("this is the display function");
     
 }
@@ -15,4 +15,4 @@ const test=()=> {
 }
 
 const name ="roy";
-module.exports = {displey,test,name}
+module.exports = {display,test,name}
