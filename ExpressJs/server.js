@@ -7,9 +7,10 @@ app.use(express.json());
 connection();
 
 const studentRouter = require('./routes/studentRouter');
+const collegeRouter = require('./routes/collageRouter');
 
 app.use("/student", studentRouter);
-
+app.use("/college", collegeRouter);
 
 app.listen(port, () => {
     console.log("server running on port:", port);
