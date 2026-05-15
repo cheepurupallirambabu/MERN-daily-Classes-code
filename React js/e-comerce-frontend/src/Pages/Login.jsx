@@ -1,112 +1,91 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import emailjs from '@emailjs/browser';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-
-function Login() {
-  const [loginDetails, setloginDetails] = useState({
-    email: "",
-    password: "",
-    otp: "",
+// NOTE: In a real application, you would import this from a dedicated API service file.
+async function loginUser(credentials) {
+  // This function now makes a real API call to your backend login endpoint.
+  const response = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(credentials),
   });
 
+  const data = await response.json();
+
+  if (!response.ok) {
+    // If the server responds with an error (like 401 Unauthorized), throw an error.
+    throw new Error(data.error || 'Login failed. Please check your credentials.');
+  }
+
+  return data; // On success, return the data from the backend (e.g., { token, user }).
+}
+
+function Login() {
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const [mailOtp, setMailOtp] = useState(0);
-
-  const generateOtp = async () => {
-    try {
-      let generatedOtp = Math.floor(Math.random() * 1000000);
-
-      let time = new Date();
-      let expairedTime = `${time.getHours()}:${time.getMinutes() + 15}:00`
-      setMailOtp(generatedOtp);
-
-
-
-      await emailjs.send("service_tjk0ufd", "template_2pm0nhg", {
-        email: loginDetails.email,
-        otp: generatedOtp,
-        time: expairedTime,
-      }, { publicKey: "JqggipCSvaJ1yaZHX" })
-
-      toast.success("Otp send to Your mail successfully!")
-
-
-    }
-    catch (err) {
-      toast.error("Faild to generate otp")
-
-    }
-
-  }
-
-
   const handleReset = () => {
-    setloginDetails({
-      email: "",
-      password: "",
-      otp: '',
-    })
-  }
+    setForm({ email: '', password: '' });
+    setError('');
+  };
 
   const handleChange = (e) => {
-    setloginDetails({ ...loginDetails, [e.target.name]: e.target.value })
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handlelogin = (e) => {
-    try {
-      e.preventDefault();
-      if (mailOtp == loginDetails.otp && loginDetails.password != "") {
-        toast.success("Login successfully!")
-        localStorage.setItem("Token","23NR1A0538")
-        navigate('/')
-
-      }
-      else if (mailOtp != loginDetails.otp) {
-        toast.error("Invalid Otp!")
-
-      }
-    } catch (err) {
-      console.log(err);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError('');
+    if (!form.email || !form.password) {
+      const message = 'Please enter both email and password.';
+      setError(message);
+      toast.error(message);
+      return;
     }
-  }
-
+    setLoading(true);
+    try {
+      const data = await loginUser(form);
+      toast.success('Login successful!'); //
+      // In a real app, you'd use a context or state management to store the token
+      localStorage.setItem('Token', data.token);
+      navigate('/');
+    } catch (err) {
+      const message = err.message || 'Login failed. Please try again.';
+      setError(message);
+      toast.error(message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
       <Card className="p-4 shadow-sm border-0" style={{ width: "100%", maxWidth: "500px", borderRadius: "12px" }}>
         <h2 className="text-center mb-4 text-primary fw-bold">Login</h2>
-        <Form onSubmit={handlelogin}>
+        {error && <p className="text-danger text-center small mb-3">{error}</p>}
+        <Form onSubmit={handleLogin}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control type="email" placeholder="Enter Email" required name="email" onChange={handleChange} value={loginDetails.email} />
+              <Form.Control type="email" placeholder="Enter Email" required name="email" onChange={handleChange} value={form.email} />
             </Form.Group>
           </Row>
 
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Enter password" required name="password" onChange={handleChange} value={loginDetails.password} />
-            </Form.Group>
-          </Row>
-          
-          <Row className="mb-4 align-items-end">
-            <Col xs={12} sm={6} className="mb-3 mb-sm-0">
-              <Button variant="outline-primary" className="w-100" type='button' onClick={generateOtp}>Generate OTP</Button>
-            </Col>
-            <Form.Group as={Col} xs={12} sm={6} controlId="formGridOtp">
-              <Form.Label>OTP Code</Form.Label>
-              <Form.Control type="number" placeholder="Enter OTP" required name="otp" onChange={handleChange} value={loginDetails.otp} className='otp-in' />
+              <Form.Control type="password" placeholder="Enter password" required name="password" onChange={handleChange} value={form.password} />
             </Form.Group>
           </Row>
 
@@ -115,15 +94,15 @@ function Login() {
           </Form.Group>
 
           <div className="d-grid gap-2">
-            <Button variant="primary" type="submit" size="lg">Login</Button>
+            <Button variant="primary" type="submit" size="lg" disabled={loading}>
+              {loading ? 'Logging in...' : 'Login'}
+            </Button>
             <Button variant="light" type="reset" onClick={handleReset}>Reset</Button>
           </div>
         </Form>
       </Card>
-      <ToastContainer />
     </Container>
   );
 }
 
 export default Login;
-//npm install react-toastify

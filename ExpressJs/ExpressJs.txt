@@ -1,0 +1,90 @@
+Express Js :
+  - it is the node frame work used to build servers (ASp's)
+  - it provide a in built packages to create servers 
+
+
+  steps:
+    - npm init -y
+    - npm install express 
+
+
+    app.get("/",(req,res)=> {
+    res.status(200).send("hello world");
+})
+
+app.get("/getusers",(req,res)=>{
+    res.status(200).json({name:"ram",
+        role:"tester",
+        email:"r@gmail.com",
+        phone:"xxxxxxxx",
+    })
+})
+
+let studentDetails = []
+
+app.use(express.json())
+
+
+app.post("/add-student", (req, res) => {
+    const newStudent = {
+        stdName: req.body.name,
+        stdRollnumber: req.body.rollnumber,
+        stdBranch: req.body.branch,
+        stdSkills: req.body.skills,
+    }
+    studentDetails.push(newStudent)
+    res.status(200).json(newStudent)
+})
+
+
+
+
+
+let collageDetails = [];
+
+app.post("/add-collage", (req, res) => {
+    const newCollage = {
+        collageName: req.body.name,
+        collageCode: req.body.code,
+    }
+    collageDetails.push(newCollage)
+    res.status(200).json(collageDetails)
+})
+
+
+
+
+
+app.post("/add-multiplestudents", (req, res) => {
+    const newStudent = req.body.allStudents;
+    studentDetails.push(newStudent)
+    res.status(200).json({ message: "multiple students added successfully" })
+})
+
+app.post("/add-multiplecollages", (req, res) => {
+    const newCollage = req.body.allcollages;
+    collageDetails.push(newCollage)
+    res.status(200).json({ message: "multiple collages added successfully" })
+})
+
+app.get("/get-students", (req, res) => {
+    res.status(200).json(studentDetails)
+})
+app.get("/get-collage", (req, res) => {
+    res.status(200).json(collageDetails);
+})
+
+
+app.delete("/delete-collage/:code", (req, res) => {
+    const Pcode = req.params.code;
+    collageDetails = collageDetails.filter((college) => college.collageCode != Pcode
+    )
+
+    res.status(200).json({ message: "collage deleted successfully", collageDetails })
+}
+)
+
+
+mvc :(model view controller)
+
+  request -> router -> controller -> model -> Database
