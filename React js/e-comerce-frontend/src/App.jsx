@@ -13,6 +13,8 @@ import LandingPage from "./Pages/LandingPage"
 import { createContext, useEffect, useState } from "react"
 import ErrorPage from "./Pages/ErrorPage"
 import ProtecutedRoute from "./components/ProtecutedRoute"
+import ForgetPassword from "./Pages/ForgetPassword"
+
 
 export const CartContext = createContext();
 
@@ -28,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     getToken();
-  })
+  }, [])
 
   const [items, setItems] = useState([]);
 
@@ -53,6 +55,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="login" element={<Login />} />
+            <Route path="forget-password" element={<ForgetPassword />} />
             <Route path="register" element={<Register />} />
             <Route path="home" element={
               <ProtecutedRoute authenicated={isLogin}><Home /></ProtecutedRoute>

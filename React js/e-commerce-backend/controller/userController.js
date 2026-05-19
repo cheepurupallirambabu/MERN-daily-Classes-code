@@ -6,24 +6,24 @@ const bcrypt = require('bcrypt');
 
 const register = async (req,res)=> {
 try {
-    const { name, phone,email,password,adderss,city,userType,state,zip} = req.body
+    const { name, phone,email,password,address,city,userType,state,zip} = req.body
    const hashedPassword = await bcrypt.hash(password,10)
     const newUser = {
         name:name,
         phone:phone,
         email:email,
         password:hashedPassword,
-        adderss:adderss,
+        address:address,
         city:city,
         userType:userType,
         state:state,
         zip:zip,
     }
 
-   await Users.insertOne(newUser);
-   res.status(200).json({meassage:"Register successfully!"})
+   await Users.create(newUser);
+   res.status(201).json({message:"Register successfully!"})
 } catch (error) {
-    res.status(500).json({message:"faild to register!",err:error})
+    res.status(500).json({message:"failed to register!",err:error.message})
 }
 }
 
@@ -33,16 +33,19 @@ try {
 const login  = async (req,res)=> {
     try {
         const {email, password} = req.body;
-       const foundUser = await Users.findOne({email:email})
-       const hashedPassword = await bcrypt.compare(password,foundUser.password)
-
-       if(!hashedPassword){
-        res.status(400).json({message:"wrong password"})
+       const foundUser = await Users.findOne({email:email});
+       if (!foundUser) {
+           return res.status(404).json({message: "User not found"});
        }
-       res.status(200).json({message:"found user",foundUser})
+       const isPasswordCorrect = await bcrypt.compare(password,foundUser.password);
+
+       if(!isPasswordCorrect){
+        return res.status(400).json({message:"Wrong password"});
+       }
+       res.status(200).json({message:"Found user",foundUser});
        
     } catch (error) {
-        res.status(500).json({message:"user notfound"})
+        res.status(500).json({message:"An error occurred during login."});
     }
 }
 
@@ -53,7 +56,7 @@ const getUserBasedOnID = async (req,res)=>{
     const foundUser = await Users.findById(req.params.id);
     res.status(200).json({message:"found user",foundUser})
     } catch (error) {
-        res.status(500).json({message:"faild to get user"})
+        res.status(500).json({message:"failed to get user"})
     }
 }
 //update profile
@@ -63,7 +66,7 @@ const updateProfile = async (req ,res)=> {
       const updateUser = await Users.findByIdAndUpdate(req.params.id, req.body,{new:true})
         res.status(200).json({message:"update successfully!",updateUser})
     } catch (error) {
-        res.status(500).json({message:"faild to update!",error})
+        res.status(500).json({message:"failed to update!",error})
     }
 }
 
@@ -74,21 +77,25 @@ const getAllUsers = async (req,res)=> {
     const allUsers = await  Users.find();
     res.status(200).json({message:"finding all users",allUsers})
     } catch (error) {
-        res.status(500).json({message:"faild to get users",error})
+        res.status(500).json({message:"failed to get users",error})
     }
 }
 
 //forget password
 
 const forgetPassword = async (req,res)=> {
-    const hashedPassword  =await bcrypt.hash(req.body.password,10)
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and new password are required.' });
+    }
+    const hashedPassword  = await bcrypt.hash(password,10)
     try {
-        const updateedUser = await Users.findByIdAndUpdate(req.params.id,{password:hashedPassword},{new:true})
-        res.status(200).json({message:"update successfully!",updateedUser})
+        const updatedUser = await Users.findOneAndUpdate({ email: email },{password:hashedPassword},{new:true})
+        if (!updatedUser) return res.status(404).json({ message: 'User not found.' });
+        res.status(200).json({message:"Password updated successfully!", updatedUser})
     } catch (error) {
-        res.status(500).json({message:"faild to forget",error})
+        res.status(500).json({message:"Failed to update password", error: error.message})
     }
 }
 
 module.exports = {register,login,getUserBasedOnID,updateProfile,getAllUsers,forgetPassword};
-

@@ -7,5 +7,5 @@ router.post('/login',login);
 router.get('/get-user/:id',getUserBasedOnID)
 router.patch('/update-profile/:id',updateProfile)
 router.get('/get-all-users',getAllUsers)
-router.patch('/paddword/:id',forgetPassword)
+router.patch('/forgot-password',forgetPassword)
 module.exports = router;

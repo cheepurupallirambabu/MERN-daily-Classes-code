@@ -1,24 +1,22 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../App";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Cart = (props) => {
   const { items,removeItemscart } = useContext(CartContext);
 
-  const [inputText, setInputText] = useState("")
-console.log(items);
-
+  const [inputText, setInputText] = useState("");
   const [filterProducts, setFilterProducts] = useState(items)
 
+  useEffect(() => {
+    const filteredItems = items.filter((product) =>
+      product.title.toLowerCase().includes(inputText.toLowerCase().trim())
+    );
+    setFilterProducts(filteredItems);
+  }, [items, inputText]);
+
   const handleFilter = (e) => {
-    setInputText(e.target.value)
-    
-
-    let filtereditems = items.filter((matchedProduct) => matchedProduct.title.toLowerCase().includes(inputText.toLowerCase().trim()));
-    setFilterProducts(filtereditems);
-   
-
-
+    setInputText(e.target.value);
   }
 
 
@@ -44,10 +42,7 @@ console.log(items);
                   <Card.Img variant="top" src={product.imageSrc} alt={product.title} style={{ height: '200px', objectFit: 'cover' }} />
                   <Card.Body className="d-flex flex-column text-center">
                     <Card.Title>{product.title}</Card.Title>
-                    <Button variant="outline-danger" className="mt-auto w-100" onClick={() => {
-                      removeItemscart(product)
-                      setFilterProducts(items)
-                    }}>Remove</Button>
+                    <Button variant="outline-danger" className="mt-auto w-100" onClick={() => removeItemscart(product)}>Remove</Button>
                   </Card.Body>
                 </Card>
               </Col>

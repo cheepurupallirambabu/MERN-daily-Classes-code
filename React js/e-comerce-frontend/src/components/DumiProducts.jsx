@@ -34,7 +34,6 @@ function DumiProducts() {
     <Row xs={1} md={4} className="g-4">
       {products.map((item, idx) => {
       const isPresent= items.some((product)=>product.id==item.id);
-      console.log("Is present",isPresent);
       
         return (
           <Col key={idx} className="mb-4">
