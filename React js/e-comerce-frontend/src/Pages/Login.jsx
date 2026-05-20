@@ -9,8 +9,7 @@ import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import emailjs from '@emailjs/browser';
-
-function Login() {
+function Login({ onLogin }) {
   const [form, setForm] = useState({ email: '', password: '',otp:'' });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -35,28 +34,14 @@ function Login() {
     }
     setIsSendingOtp(true);
     try {
-      // NOTE: In a production application, OTP generation and validation should ALWAYS be handled
-      // on a secure backend server to prevent client-side manipulation.
-      const generatedOtp = Math.floor(100000 + Math.random() * 900000);
-      const expiryTime = new Date(new Date().getTime() + 15 * 60000);
-      setMailOtp(generatedOtp);
-
-      // IMPORTANT: For security, store your EmailJS credentials in a .env file
-      // and access them via `import.meta.env.VITE_...`
-      const serviceId = "service_tjk0ufd";
-      const templateId = "template_2pm0nhg";
-
-      await emailjs.send(serviceId, templateId, {
-        email: form.email,
-        otp: generatedOtp,
-        time: expiryTime.toLocaleTimeString(),
-      });
-
+      // In a real application, the frontend should request the backend to send the OTP.
+      // The backend would generate, store, and email the OTP.
+      // Example:
+      await axios.post('http://localhost:5000/user/send-otp', { email: form.email });
       toast.success("OTP sent to your mail successfully!");
-    }
-    catch (err) {
+    } catch (err) {
       console.error('Failed to send OTP:', err);
-      toast.error("Failed to generate OTP.");
+      toast.error(err.response?.data?.error || "Failed to send OTP.");
     } finally {
       setIsSendingOtp(false);
     }
@@ -71,12 +56,6 @@ function Login() {
       toast.error(message);
       return;
     }
-    // NOTE: This is client-side OTP validation for demonstration only.
-    // In a real application, the OTP must be sent to and verified by your backend server.
-    if (mailOtp === null || parseInt(form.otp, 10) !== mailOtp) {
-      setError('The entered OTP is incorrect. Please generate a new one and try again.');
-      return;
-    }
     setLoading(true);
     try {
       const response = await axios.post("http://localhost:5000/user/login", form);
@@ -86,9 +65,10 @@ function Login() {
       // Assuming the token is in response.data.token
       if (response.data && response.data.token) {
         localStorage.setItem('Token', response.data.token);
+        onLogin();
       }
       console.log(response);
-      navigate('/');
+      navigate('/home');
     } catch (err) {
       const message = err.response?.data?.error || err.message || 'Login failed. Please try again.';
       setError(message);

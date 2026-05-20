@@ -12,25 +12,25 @@ import './assets/Style.css'
 import LandingPage from "./Pages/LandingPage"
 import { createContext, useEffect, useState } from "react"
 import ErrorPage from "./Pages/ErrorPage"
-import ProtecutedRoute from "./components/ProtecutedRoute"
+import ProtectedRoute from "./components/ProtectedRoute"
 import ForgetPassword from "./Pages/ForgetPassword"
+import ViewUsers from "./Pages/ViewUsers"
 
 
 export const CartContext = createContext();
 
 const App = () => {
 
+  const [isLogin, setIsLogin] = useState(!!localStorage.getItem('Token'));
 
-  const [isLogin, setIsLogin] = useState();
-  const getToken = () => {
-    const Token = localStorage.getItem('Token') ? true : false;
-    console.log(isLogin);
-    setIsLogin(Token)
+  const handleLogin = () => {
+    setIsLogin(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('Token');
+    setIsLogin(false);
   }
-
-  useEffect(() => {
-    getToken();
-  }, [])
 
   const [items, setItems] = useState([]);
 
@@ -51,22 +51,23 @@ const App = () => {
     <>
       <BrowserRouter>
         <CartContext.Provider value={{ items, addToCart, removeItemscart }}>
-          <NavBar authenicated={isLogin}/>
+          <NavBar authenicated={isLogin} onLogout={handleLogout} />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="login" element={<Login />} />
+            <Route path="login" element={<Login onLogin={handleLogin} />} />
             <Route path="forget-password" element={<ForgetPassword />} />
             <Route path="register" element={<Register />} />
             <Route path="home" element={
-              <ProtecutedRoute authenicated={isLogin}><Home /></ProtecutedRoute>
+              <ProtectedRoute authenicated={isLogin}><Home /></ProtectedRoute>
             } />
-            <Route path="products" element={<ProtecutedRoute authenicated={isLogin}>
+            <Route path="products" element={<ProtectedRoute authenicated={isLogin}>
               <Products />
-            </ProtecutedRoute>} />
-            <Route path="cart" element={<ProtecutedRoute authenicated={isLogin}><Cart /></ProtecutedRoute>} />
-            <Route path="desboard" element={<ProtecutedRoute authenicated={isLogin}><DesBoard /></ProtecutedRoute>} />
-            <Route path="vieworderedproducts" element={<ProtecutedRoute authenicated={isLogin}><ViewOrderedProducts /></ProtecutedRoute>} />
+            </ProtectedRoute>} />
+            <Route path="cart" element={<ProtectedRoute authenicated={isLogin}><Cart /></ProtectedRoute>} />
+            <Route path="desboard" element={<ProtectedRoute authenicated={isLogin}><DesBoard /></ProtectedRoute>} />
+            <Route path="vieworderedproducts" element={<ProtectedRoute authenicated={isLogin}><ViewOrderedProducts /></ProtectedRoute>} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="view-users" element={<ProtectedRoute authenicated={isLogin}><ViewUsers /></ProtectedRoute>} />
           </Routes>
         </CartContext.Provider>
 

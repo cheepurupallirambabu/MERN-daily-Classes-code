@@ -5,17 +5,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from '../App';
 import { useContext } from 'react';
-
-function NavBar({authenicated}) {
+function NavBar({ authenicated, onLogout }) {
 
   const { items } = useContext(CartContext);
 
-  const Token = localStorage.getItem("Token");
   const navigate = useNavigate();
 
   const handleLoginLogout = () => {
-    if (Token) {
-      localStorage.removeItem("Token");
+    if (authenicated) {
+      onLogout();
     }
     navigate('/login');
   };
@@ -37,9 +35,7 @@ function NavBar({authenicated}) {
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/cart">Cart Products</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="">
-                View Users
-              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/view-users">View Users</NavDropdown.Item>
             </NavDropdown>
           </Nav>
 
@@ -51,7 +47,7 @@ function NavBar({authenicated}) {
 
         <div className="text-decoration-none mt-lg-0">
           <button id="login-btn" className='btn btn-warning fw-bold d-flex align-items-center gap-2' onClick={handleLoginLogout}>
-            {Token?"Logout":"Login"}
+            {authenicated ? "Logout" : "Login"}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
               <path fillRule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z" />
               <path fillRule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
