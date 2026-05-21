@@ -65,49 +65,58 @@ const login = async (req, res) => {
 // getUser
 const getUserBasedOnID = async (req, res) => {
   try {
-    const foundUser = await Users.findById(req.params.id);
-    res.status(200).json({ foundUser });
+    // Exclude password from the result
+    const foundUser = await Users.findById(req.params.id).select('-password');
+    if (!foundUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    return res.status(200).json({ foundUser });
   } catch (error) {
-    res.status(500).json({ message: "failed to get user" });
+    return res.status(500).json({ message: "failed to get user" });
   }
 };
 // update profile
 const updateProfile = async (req, res) => {
   try {
+    // Get user ID from the token to ensure users can only update their own profile.
+    const userId = req.user.id;
     const updatedProfile = await Users.findByIdAndUpdate(
-      req.params.id,
+      userId,
       req.body,
       { new: true },
-    );
-    res.status(200).json({ message: "updated successfully", updatedProfile });
+    ).select('-password');
+    return res.status(200).json({ message: "updated successfully", updatedProfile });
   } catch (error) {
-    res.status(500).json({ message: "failed to update profile", err: error });
+    return res.status(500).json({ message: "failed to update profile", err: error });
   }
 };
 
 // get Users
 const getAllUsers = async (req, res) => {
   try {
-    const allUsers = await Users.find();
-    res.status(200).json({ allUsers });
+    // Exclude passwords from the result
+    const allUsers = await Users.find().select('-password');
+    return res.status(200).json({ allUsers });
   } catch (error) {
-    res.status(500).json({ message: "failed to get users", err: error });
+    return res.status(500).json({ message: "failed to get users", err: error });
   }
 };
 
-//forget password
+//forget password - WARNING: This endpoint is insecure.
 const forgetPassword = async (req, res) => {
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   try {
-    // Add await here
     const updatedUser = await Users.findByIdAndUpdate(
       req.params.id,
       { password: hashedPassword },
       { new: true },
     );
-    res.status(200).json({ message: "password updated successfully" });
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    return res.status(200).json({ message: "password updated successfully" });
   } catch (error) {
-    res.status(500).json({ message: "failed to update password", err: error });
+    return res.status(500).json({ message: "failed to update password", err: error });
   }
 };
 

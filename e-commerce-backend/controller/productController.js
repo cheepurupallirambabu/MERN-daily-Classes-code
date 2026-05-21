@@ -49,11 +49,11 @@ const updateProduct = async (req, res) => {
 
 const filteredProductsBasedOnPrice = async (req, res) => {
   try {
-    const { lowPrice, highPrice } = req.query;
+    const { min, max } = req.query;
     const filteredProducts = await products.find({
       price: {
-        $gte: { $numberDecimal: lowPrice },
-        $lte: { $numberDecimal: highPrice }
+        $lte: max,
+        $gte: min
       }
     });
     res.status(200).json(filteredProducts);
